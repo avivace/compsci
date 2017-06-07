@@ -423,6 +423,39 @@ Transparent mode takes the most time to transfer a block of data, yet it is also
 
 # Sensori
 
+## Convertitori A/D
+Convertono un segnale elettrico analogico in un *equivalente* segnale digitale, in due fasi:
+
+- **Campionamento** segnale analogico continuo nel tempo viene discretizzato, osservando i suoi valori ad istanti regolari;
+- **Quantizzazione** il segnale campionato viene approssimato con la sua misura intera rispetto ad una certa unità di misura.
+
+Nyquist/Shannon
+
+- Ogni segnale è rappresentabile come sovrapposizione di sinusoidi di frequenza e ampiezza variabile
+- L'intervallo di frequenze [0, Fb] in cui il segnale possiede il 90-95% della sua energia è detto banda di segnale
+- Nyquist: Se la frequenza di campionamento è >= 2 Fb, il segnale puo essere fedelmente ricostruito da un suo campionamento
+
+### Aliasing
+
+- Se il campionamento viene effettuato ad una frequenza minore della 2Fb, il segnale ricostruito può risultare molto diverso da quello che codificava.
+- Se campiono a bitrate basso, devo eliminare le frequenze fuori dalla banda Nyquist con un filtro antialiasing.
+
+### Rumore di quantizzazione
+L'operazione di quantizzazione di un segnale analogico non è trasparente, ed introduce cambiamenti nel sistema che equivalgono alla sovrapposizione di un segnale spurio al segnale stesso.
+
+
+todo
+### Tipi di convertitori A/D
+
+- Approssimazioni successive: ricerca binaria negli intervalli di tensione
+- Delta: ricerca lineare negli intervalli di tensione
+- Rampa: confronto con una rampa
+- Delta-Sigma
+- Flash: meno precisi, minore ritardo di conversione, maggiore frequenza massima di campionamento, più complesso in generale.
+
+todo: codec
+
+
 # Attuatori
 Un attuatore è un meccanismo attraverso cui un agente agisce su un ambiente, inoltre l'agente può essere o un agente intelligente artificiale o un qualsiasi altro essere autonomo (umano, animale). In senso lato, un attuatore è talvolta definito come un qualsiasi dispositivo che converte dell'energia da una forma ad un'altra, in modo che questa agisca nell'ambiente fisico al posto dell'uomo.
 
@@ -432,6 +465,9 @@ Anche un meccanismo che mette qualcosa in azione automaticamente è detto attuat
 Attuatori di movimento: basati sul campo magnetico prodotto dalla corrente che attraversa un avvolgirmento e sposta una barra metallica. I solenoidi latching (bistabili) mantengono lo stato allo spegnimento dell'alimentazione.
 
 ## Motori DC
+Producono un momento meccanico proporzionale alla corrente che attraversa il motore, possono essere comandati via PWM se dotati di opportuna scheda di controllo.
+
+todo: formule?
 
 # Scheduling
 todo
