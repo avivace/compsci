@@ -80,11 +80,31 @@ decrypt(k_priv, encrypt(k_pub, p)) = p
 decrypt(k_pub, encrypt(k_priv, p)) = p
 ```
 
-todo
+##### Teorema di Eulero
+Dati due numeri primi **p** e **q**, dato che **x** non ha divisori comuni con **p** e **q**, vale sempre: 
+\begin{align*}
+  x^{(p-1)(q-1)} = r \Mod{p*q}
+\end{align*}
+
+
+RSA algorithm:
+
+1. Choose **p**, **q** randomly, very big primes
+2. Compute $n = p *q$ and $f=(p-1)(q-1)$
+3. Choose **e**, **d** such that $e*d = 1 \Mod{f}$
+4. Throw **p**, **q**, **f** away
+5. **PublicKey** = $(e, n)$ ; **PrivateKey** = $(d, n)$
+
+Given a message **M**:
+
+- Encrypt: $C = M^e \Mod {n}$
+- Decrypt: $D = C^d \Mod {n} = M$
+
 
 
 #### Checksum 
-A checksum is a small-sized datum derived from a block of digital data for the purpose of detecting errors which may have been introduced during its transmission or storage. It is usually applied to an installation file after it is received from the download server. By themselves, checksums are often used to verify data integrity but are not relied upon to verify data authenticity.
+A checksum is a small-sized datum derived from a block of digital data for the purpose of detecting errors which may have been introduced during its transmission or storage. It is usually applied to an ins
+tallation file after it is received from the download server. By themselves, checksums are often used to verify data integrity but are not relied upon to verify data authenticity.
 
 The actual procedure which yields the checksum from a data input is called a checksum function or checksum algorithm. Depending on its design goals, a good checksum algorithm will usually output a significantly different value, even for small changes made to the input. This is especially true of cryptographic hash functions, which may be used to detect many data corruption errors and verify overall data integrity; if the computed checksum for the current data input matches the stored value of a previously computed checksum, there is a very high probability the data has not been accidentally altered or corrupted.
 
@@ -128,4 +148,67 @@ Confidenzialità: `RSA + DES`, si cifra con RSA una chiave segreta casuale, la s
 Integrità e Autenticità: `RSA + MD5`, firme digitali.
 
 ## Firme digitali
- 
+La crittografia a chiave pubblica soddisfa i requisiiti di autenticazione e non ripudio quando viene usata in senso inverso:
+- Si cifra il messaggio con la chiave privata (possessore)
+- Tutti possono decifrarlo con la chiave pubblica, verificandone la provenienza
+
+Normalmente si firma un checksum (message digest) del messaggio, se esso è troppo grande: i destinatari ricevono messaggio in chiaro e firma. Autenticano la firma con la chiave pubblica e verificano che equivalga al message digest del messaggio ricevuto.
+
+Tuttavia, come si stabilisce con sicurezza chi è il proprietario di una chiave pubblica? Ovvero, come mi assicuro l'identità di un proprietario di una chiave privata che cifra un messaggio decifrabile da una data chiave pubblica sia una certa entità? (*Possedere una chiave pubblica X* si intende essere in possesso della chiave privata Y che cifra i messaggi decifrabili con X)
+
+### Certificati x.509
+Un certificato, emesso da un'autorità fidata e autorizzata, garantisce la veridicità di una chiave pubblica rispetto ad un'entità (persona o azienda).
+
+Un certificato x.509 contiene:
+
+- Nome entità
+- Chiave pubblica dell'entità certificata
+- Nome dell'autorità certificante
+- Firma digitale dell'autorità certificante
+
+A sua volta, se si disponde della chiave pubblica dell'autorità certificante, si può verificare l'autenticità e l'integrità del certificato.
+
+> Trusting a certification authority means trusting every entity the authority certificates.
+
+### Catene di certificati
+
+- `A` ha la chiave pubblica di `X` e si fida di `X`.
+- `X` rilascia un certificato a `Y`
+- `Y` rilascia un certificato a `Z`
+
+`A` può fidarsi di `Z`? `A` verifica il certificato di `Y`, se è autentico e rilasciato da `X`, si verifica il certifcato di `Z` con la chiave pubblica di `Y`.
+
+### PKI: Public Key Infrastructure
+Public key cryptography is a cryptographic technique that enables entities to securely communicate on an insecure public network, and reliably verify the identity of an entity via digital signatures.
+
+A public key infrastructure (PKI) is a system for the creation, storage, and distribution of digital certificates which are used to verify that a particular public key belongs to a certain entity. The PKI creates digital certificates which map public keys to entities, securely stores these certificates in a central repository and revokes them if needed.
+
+A PKI consists of:
+
+- A certificate authority (CA) that stores, issues and signs the digital certificates
+- A registration authority which verifies the identity of entities requesting their digital certificates to be stored at the CA
+- A central directory—i.e., a secure location in which to store and index keys
+- A certificate management system managing things like the access to stored certificates or the delivery of the certificates to be issued.
+- A certificate policy
+
+Methods of certifications are Certificate Authorities (CA) and Web of Trust(GPG approach)
+
+### PGP
+
+- GPG ne è una versione open source.
+- Interfaccia a riga di comando
+- Permette di creare coppie di chiavi (pubblica e privata)
+- Permette di specificare una password per proteggere la chiave privata salvata
+- Tiene una lista di chiavi note e relativo livello di fiducia
+- Permette di cifrare/decifrare documenti con chiavi note
+- Permette di firmare e autenticare documenti con chiavi note
+
+## Fattori esterni
+
+- Software bug
+- Debolezze nei protocolli non software (intercettazioni)
+- Attacchi sofisticati (tecnici interni)
+- Debolezze non note dei dispositivi
+- Social engineering
+- Tenchical and non-technical spying
+- Comportamenti inadeguati degli utenti
