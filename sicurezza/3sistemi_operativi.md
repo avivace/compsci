@@ -55,3 +55,57 @@ The user authentication layer (RFC 4252). This layer handles client authenticati
 - **publickey**: a method for public key-based authentication, usually supporting at least DSA or RSA keypairs, with other implementations also supporting X.509 certificates.
 
 ## Controllo degli accessi agli oggetti protetti
+
+### Access Control List
+Ogni file elenca gruppi/utenti (con supporto a wildcard) e relativi diritti su di esso (Read, Write, Execute).
+
+#### Bit di protezione
+```
+Owner   Group   World
+R W X   R W X   R W X
+```
+È una versione semplificata di ACL, 9 bit + ID User/Group per file, il proprietario può modificare i diritti di ogni risorsa.
+
+**Discretionary Access Control**, il proprietario di una risorsa può concedere accesso ad altri a sua discrezione. *Access Control List* è uno di questi.
+
+## Mandatory Access Control
+
+Il sistema impone un modello che limita e controlla la discrezionalità degli utenti nell'assegnare i diritti di accesso alle risorse.
+
+I modelli di sicurezza di questa tipologia definiscono in maniera precisa la relazione di accessiblità fra soggetti e oggetti del sistema, in base a obiettivi e requisiti di sicurezza specifici, fortemente dipendenti dal dominio applicativo.
+
+### MAC: Sicurezza multi-livello
+La confidenzialità/integrità dei dati sono i requisiti principali (militare/commerciale).
+
+Classifica i livelli di sicurezza soggetti e oggetti, l'accesso viene consentito solo se il livello soggetto >= livello oggetto.
+
+#### Modello Bell-LaPadula
+Schema controllo accessi tipo MAC, vengono garantite due proprietà:
+
+- Simple security property (no-read-up), un soggetto non legge oggetti di classificazione più alta.
+- Confinement property  (no-write-down), un soggetto non scrive oggetti di classificazione più bassa
+
+#### Modello BIBA (integrità)
+- Simple integrity property (no-write-up), un soggetto non può modificare oggetti di classificazione più alta.
+- Integrity confinement property (no-read-down), un soggetto non legge oggetti di classificazione più cassa
+
+[...]
+
+## Meccanismi di sicurezza nei SO
+- Autenticazione (identificazione sicura)
+- Controllo accessi (restrizione e controllo dei diritti di accesso alle risorse)
+- Modelli di sicurezza (requisiti e policy di sicurezza con quali governare controllo accessi)
+- Auditing (monitoraggio)
+
+
+## Covert Channels
+A covert channel is a type of computer attack that allows the communication of information by transferring objects through existing information channels or networks using the structure of the existing medium to convey the data in small parts. This makes conveyance through a covert channel virtually undetectable by administrators or users.
+
+Covert channels have been used to steal data from highly secure systems.
+
+A covert channel is created by using some of the space available either within the padding or within other parts of the transport of network packets. Covert channels use any means where data can be added to a data stream without affecting the main body of data being transmitted. This allows the covert receiver to abstract data from a system without creating any type of data trail. A single packet might only contain one or two bits of the covert data stream, making detection very difficult.
+
+Creating a covert channel takes some ingenious programming, and access to the file system at the source end of the communication is essential. This means that a covert channel can only be instigated through viral infection or through a programming effort that has administrative or other authorized access to the system.
+
+Covert channel analysis is one of the few ways to detect a covert channel. System performance degradation can be used to show covert channel use, but as computers have advanced, the degradation is insignificant compared to the amount of data processed. This makes detection even harder. The primary way of defending against covert channel attacks is to examine the source code running on the source machine, as well as monitor resource use by the system in question.
+
