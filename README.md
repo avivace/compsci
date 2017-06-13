@@ -2,7 +2,11 @@
 
 Documentation, digests and resources I’ve compiled for my Computer Science(bachelor's) courses.
 
-Rendered PDFs can be found [here](https://avivace.ovh/blog/university.html).
+## Sicurezza Informatica
+- [Applicazioni](https://github.com/avivace/compsci/blob/master/sicurezza/1applicazioni.pdf)
+- [Crittografia](https://github.com/avivace/compsci/blob/master/sicurezza/2crittografia.pdf)
+- [Sistemi Operativi](https://github.com/avivace/compsci/blob/master/sicurezza/3sistemi_operativi.pdf)
+- [Reti](https://github.com/avivace/compsci/blob/master/sicurezza/4reti.pdf)
 
 ## Databases
 - [Relational algebra exercises](https://github.com/avivace/compsci/blob/master/databases/relational_algebra.md)
