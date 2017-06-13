@@ -122,20 +122,56 @@ Gli array java sono protetti dal buffer overflow, ma tutto il codice nativo into
 
 ### NULL pointer dereference
 
-[todo]
-
 Funzione MMAP: mappare indirizzi fisici nello spazio di memoria del processo.  
 Con MMAP si può eseguire funzioni puntate da puntatori NULL (modificando cosa significa NULL con MMAP).
 
+Normalmente exception/crash, se l'attaccate riesce ad eseguire mmap prima e poi causare volutamente il dereference può eseguire codice arbitrario.
 Operazioni svolte tipicamente:
 
-- MMAP  
+- MMAP (rimap del null a 0/indirizzo shellcode)
 - syscall -> NULL pointer dereference nel kernel -> esegue ciò che sta in 0  
 - assegnamento di permessi di root al processo, o robe simili
 
 ## Java security model
 
-[todo]
+The Java security model is based on controlling the operations that a class can perform when it is loaded into a running environment. For this reason, this model is called code-centric or code-based.
+
+### Permissions
+
+A permission is a set of permissible operations on some set of resources. Every Java class loaded into a running environment is assigned a set of permissions according to some criteria, each permission granting a specific access to a particular resource. For example, a permission can constrain the access to a database or disallow the editing of a file.
+
+In code-based security, permissions are granted based on code characteristics, such as where the code is coming from and whether it is digitally signed (and by whom). A codebase is a URL indicating code location.
+
+### Protection Domains and Security Policies
+
+A protection domain associates permissions with codesources. The policy currently in effect is what determines protection domains. A protection domain contains one or more codesources. It may also contain a Principal array describing who is executing the code, a classloader reference, and a permission set (java.security.PermissionCollection instance) representing a collection of Permission objects.
+
+A security policy defines the protection domains of an environment, that is, it identifies the permissions assigned to classes from specified sources. The permissions assigned to a class by a protection domain are bound statically, when the class is loaded, or dynamically, when the executing code attempts a security-sensitive operation. Protections domains are specified in one or several policy files.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{1.png}
+\caption{Associating classes with permissions through protection domains \label{overflow}}
+\end{figure}
+
+### Security Managers and Access Controllers
+
+A security manager is the component of the Java security model that enforces the permissions granted to applications by security policies. For any security-sensitive operation that an application attempts, the security manager checks the application permissions and determines whether the operation should be allowed. The Java class java.lang.SecurityManager represents a security manager and includes several check methods to determine whether an operation should be allowed or a given permission is in effect.
+
+An access controller is the object used by the security manager (or directly by an application, if the security manager is not enabled) to control operations and decisions. More specifically, an access controller:
+
+- Decides whether access to a system resource should be allowed or denied, based on the current security policy in effect.
+- Marks code as being privileged, thus affecting subsequent access determinations.
+
+- Allows saving the current calling context so access-control decisions that consider the saved context can be made from other, different contexts.
+
+The Java class java.security.AccessController represents an access controller and includes the method checkPermission(aPerm) that determines whether the access requested in the passed permission should be granted. The following code snippet illustrates the use of this method to allow reading the file /temp/testFile:
+```java
+FilePermission perm = new FilePermission("/temp/testFile", "read");
+AccessController.checkPermission(perm);
+```
+
+`checkPermission` evaluates according to the particular implementation of the access controller. The default implementation examines the entire call stack, the classes in it, and the permissions granted to those classes to determine whether to grant a request. The method returns silently if the request is granted or throws an exception if the request is denied (or the passed permission is invalid).
 
 Gestisce gli accessi alle risorse di sistema usando Policy configurabili.  
 Codice caricato -> permessi assegnati in base alle Policy.
