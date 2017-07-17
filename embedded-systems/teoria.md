@@ -392,7 +392,7 @@ Funzionamento:
 - is-alive check
 
 ## Direct Memory Access
-Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory (RAM), independent of the central processing unit (CPU).
+Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory (RAM), **independent** of the central processing unit (CPU).
 
 
 Without DMA, when the CPU is using programmed input/output, it is typically fully occupied for the entire duration of the read or write operation, and is thus unavailable to perform other work. With DMA, the CPU first initiates the transfer, then it does other operations while the transfer is in progress, and it finally receives an interrupt from the DMA controller when the operation is done. This feature is useful at any time that the CPU cannot keep up with the rate of data transfer, or when the CPU needs to perform useful work while waiting for a relatively slow I/O data transfer. Many hardware systems use DMA, including disk drive controllers, graphics cards, network cards and sound cards. DMA is also used for intra-chip data transfer in multi-core processors. Computers that have DMA channels can transfer data to and from devices with much less CPU overhead than computers without DMA channels. Similarly, a processing element inside a multi-core processor can transfer data to and from its local memory without occupying its processor time, allowing computation and data transfer to proceed in parallel.
@@ -408,7 +408,7 @@ Funzionamento:
 - `BUSREQ`: il controller DMA chiede alla CPU di sospendere l'uso del bus
 - Una volta ricevuto `BUSACK`, il controller asserisce l'indirizzo di destinazione, ed invia `DMAACK`
 - Il dispositivo di I/O pone il dato sul bus dati
-- Alternativa: dual address model (I/O -> MEM)
+- Alternativa: dual address model (I/O -> registro DMA e poi MEM)
 
 ### Modalità di trasferimento
 
@@ -423,16 +423,24 @@ Transparent mode takes the most time to transfer a block of data, yet it is also
 
 # Sensori
 
+## Comparatori
+Ricevono due segnali analogici, ritornano un segnalo alto o basso se il primo dei due input è maggiore o minore del secondo.
+
 ## Convertitori A/D
 Convertono un segnale elettrico analogico in un *equivalente* segnale digitale, in due fasi:
 
 - **Campionamento** segnale analogico continuo nel tempo viene discretizzato, osservando i suoi valori ad istanti regolari;
 - **Quantizzazione** il segnale campionato viene approssimato con la sua misura intera rispetto ad una certa unità di misura.
 
-Nyquist/Shannon
+L'intervallo di tempo che passa da una misurazione all'altra durante il campionamento equivale a `1/f`. `f` è detta *frequenza di campionamento*.
+
+Numero di bit necessari = `Floor(log2(Vsw/LSB))`
+
+
+### Nyquist/Shannon
 
 - Ogni segnale è rappresentabile come sovrapposizione di sinusoidi di frequenza e ampiezza variabile
-- L'intervallo di frequenze [0, Fb] in cui il segnale possiede il 90-95% della sua energia è detto banda di segnale
+- L'intervallo di frequenze [0, Fb] in cui il segnale possiede il 90-95% della sua energia è detto **banda di segnale**
 - Nyquist: Se la frequenza di campionamento è >= 2 Fb, il segnale puo essere fedelmente ricostruito da un suo campionamento
 
 ### Aliasing
@@ -443,15 +451,20 @@ Nyquist/Shannon
 ### Rumore di quantizzazione
 L'operazione di quantizzazione di un segnale analogico non è trasparente, ed introduce cambiamenti nel sistema che equivalgono alla sovrapposizione di un segnale spurio al segnale stesso.
 
+Questo "rumore" è distribuito uniformemente nell'intervallo +- 1/2 LSB:
 
-todo
+Assumendo 1 Ohm R:
+- Valore medio nullo
+- Deviazione standard = LSB / rad(12) = 0.29 LSB
+- Potenza = varianza = LSB^2 / 12
+
 ### Tipi di convertitori A/D
 
 - Approssimazioni successive: ricerca binaria negli intervalli di tensione
 - Delta: ricerca lineare negli intervalli di tensione
 - Rampa: confronto con una rampa
 - Delta-Sigma
-- Flash: meno precisi, minore ritardo di conversione, maggiore frequenza massima di campionamento, più complesso in generale.
+- Flash: meno precisi, minore ritardo di conversione, maggiore frequenza massima di campionamento, più complesso in generale (realizzati  con molte resistenze)
 
 todo: codec
 
