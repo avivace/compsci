@@ -486,7 +486,7 @@ Dove:
 
 $\mathlarger{g_{RMS}= \lim_{T\to\infty} \sqrt{\frac{1}{2T}\int_{-T}^{T} g^2 dt}}$
 
-Il **range dinamico** è, in questo caso, è il rapporto segnale/rumore tra il massimo segnale che non satura la misurazione e il minimo segnale individuabile (R di quantizzazione).
+Il **range dinamicoo** è, in questo caso, è il rapporto segnale/rumore tra il massimo segnale che non satura la misurazione e il minimo segnale individuabile (R di quantizzazione).
 
 ### Tipi di convertitori A/D
 
@@ -522,9 +522,205 @@ Attuatori di movimento: basati sul campo magnetico prodotto dalla corrente che a
 ### Motori DC
 Producono un momento meccanico proporzionale alla corrente che attraversa il motore, possono essere comandati via PWM se dotati di opportuna scheda di controllo.
 
-todo: formule?
+TODO: formule?
 
 # 5. Scheduling
-todo
+TODO
 
-# 6. Pogrammazione
+# 6. Programmazione
+
+La struttura del software determina *quanto* siamo in grado di controllare il tempo di risposta. Dipende da:
+
+- Requisiti applicativi
+- Velocità del sistema di elaborazione (processore)
+
+In generale, maggiore controllo implica maggiore complessità architetturale.
+
+## Architetture Software
+
+- Round-Robin
+- Round-Robin con interrupts
+- Function Queue Scheduling
+- Real-time Operating System
+
+### Round-Robin
+```c
+void main() {
+    while (true) {
+        if (/* device 1 needs service */) {
+            // take care of device 1
+            // handle data to/from device 1
+        }
+        ...
+        if (/* device n needs service */) {
+            // take care of device n
+            // handle data to/from device n
+        }
+    }
+}
+```
+
+Nessun interrupt, polling continuo sulle periferiche, il codice è strutturato come un ciclo che:
+- Legge lo stato dei dispositivi I/O a turno
+- Effettua le corrispondenti elaborazioni in funzione dello stato
+
+Vantaggi:
+
+- Molto semplice
+- Facilmente analizzabile (tempo = un iterazione del ciclo)
+
+Svantaggi:
+- La risposta al cambio di stato di un dispositivo non può essere più rapida di una iterazione
+- La durata di un'iterazione è data dalla somma delle singole elaborazioni
+- Fragilità nel caso vengano aggiunti dispositivi
+
+### Round-Robin con interrupt
+
+Ogni routine serve un dispositivo ed imposta un flag a true, il ciclo principale elabora i dati relativamente ai flag che sono true.
+
+```c
+volatile bool fDevice_1 = false;
+...
+volatile bool fDevice_n = false;
+void interrupt vHandleDevice_1() {
+    /* take care of device 1 */;
+    fDevice_1 = true;
+}
+...
+void interrupt vHandleDevice_n() {
+    /* take care of device n */;
+    fDevice_n = true;
+}
+
+void main() {
+    while (true) {
+        if (fDevice_1) {
+            fDevice_1 = false;
+            /* handle data to/from device 1*/;
+        }
+        ...
+        if (fDevice_n) {
+            fDevice_n = false;
+            /* handle data to/from device n*/;
+        }
+    }
+}
+```
+
+Vantaggi:
+
+- La risposta al cambio di stato di un dispositivo è più rapida, al livello di priorità dell'IRQ
+- È indipendente dall'elaboraizone del task ciclico, dipende solo dagli interrupt a priorità maggiore.
+
+Svantaggi:
+
+- Routine di interrupt e ciclo principale devono sincronizzarsi sulle risorse condivise
+- Meno predicibile il tempo di elaboraizone del task ciclico
+- Tutto il codice del task ciclico funziona allo stesso livello di priorità:
+    + nel caso peggiore, ogni blocco del task ciclico deve aspettare la somma dei tempi di tutti gli altri blocchi prima di servire il corrispondente interrupt
+    + Si potrebbe spostare il codice nelle routine di interrupt, ma questo aumenta la latenza nella gestione degli altri interrupt
+    + Poco adatta se uno dei blocchi ha computazione lunga
+
+### Function-queue-scheduling
+
+Architettura basata sull'uso di una coda di puntatori a funzione, le routine di interrupt aggiungono alla coda un puntatore alla funzione che effetua il calcolo associato all'interrupt, il main estrae i puntatori ed invoca le rispettive funzioni.
+
+Vantaggi:
+
+- Usando una coda di priorità l'ordine di esecuzione delle funzioni riflette le priorità degli interrupt
+- La massimo attesa nell'esecuzione della funzione a priorità massimo è il tempo di esecuzione della funzione che ha il massimo tempo di esecuzione
+
+
+Svantaggi:
+- L'esecuzione delle funzioni a priorità più basse può essere rimandata indefinitivamente
+- Se la funzione con il massimo tempo di esecuzione è lenta il tempo di attesa per la funzione a priorità massima potrebbe risultare comunque eccessivo.
+
+```c
+QUEUE qFunc;
+void interrupt vHandleDevice_1() {
+    /* take care of device 1 */;
+    enqueue(&func_1, PRI_1);
+}
+...
+void interrupt vHandleDevice_n() {
+    /* take care of device n */;
+    enqueue(&func_n, PRI_n);
+}
+
+void main() {
+    while (true) {
+        while (empty(&qFunc))
+            ;
+    void (*func)() = dequeue(&qFunc);
+    func();
+    }
+}
+
+void func_1() {
+    /* handle data to/from device 1 */
+}
+...
+
+void func_n() {
+    /* handle data to/from device 1 */
+}
+
+
+```
+
+### Real-time
+
+Sfrutta l'utilizzo di un SO realtime, le routine di interrupt effettuano i compiti più urgenti di gestione dei dispositivi, ad ognuno di esso è inoltre associato un task del SO che effettua la computazione associata all'interrupt, le routine di interrupt segnalano al task associato che c'è del lavoro da fare utilizzando le primitive di segnalazione fornite dal SO.
+
+
+```c
+OS_SIGNAL *sDevice_1;
+...
+OS_SIGNAL *sDevice_n;
+void interrupt vHandleDevice_1() {
+    /* take care of device 1 */;
+    OS_notify(sDevice_1);
+}
+...
+void interrupt vHandleDevice_n() {
+    /* take care of device n */;
+    OS_notify(sDevice_n);
+}
+void main() {
+    sDevice_1 = OS_new_signal();
+    ...
+    sDevice_n = OS_new_signal();
+    OS_add_task(&task_1, ...);
+    ...
+    OS_add_task(&task_n, ...);
+    OS_start();
+}
+void task_1() {
+    while (true) {
+        OS_wait(sDevice_1);
+        /* handle data to/from device 1 */
+    }
+}
+
+...
+void task_n() {
+    while (true) {
+        OS_wait(sDevice_n);
+        /* handle data to/from device n */
+    }
+}
+
+```
+
+Vantaggi:
+
+- Non è necessario gestire esplicitamente lo scheduling delle computazioni: se ne occupa il sistema operativo
+- Se il SO è *preemptive* può sospendere l'esecuzione di una computazione a bassa priorità per eseguirne una a priorità più alta. (attesa = 0)
+- Cambiamenti ai task a priorità più bassa non influiscono sul response itme dei task a priorità più alta: il design è generalmente più stabile ai cambiamenti
+
+
+Svantaggi:
+
+- Il SO ha un su overhead: il miglioramento dei tempi di risposta è ottenutoa fronte di una riduzione del thoughput
+- Occorre sincronizzare le computazioni (non sono più eseguite in modo *run-to-completion*)
+- la licenza di SO real-time commerciale costa
