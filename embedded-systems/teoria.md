@@ -1,3 +1,15 @@
+Contents:
+
+- Tema d'esame del 14/6/2017
+- Descrizione
+- Struttura
+- Periferiche
+- Scheduling
+- Programmazione
+
+## Tema d'esame del 14/6/2017
+
+###
 
 # 1. Descrizione
 
@@ -367,9 +379,9 @@ Componenti di un computer embedded (e di PC) che trasformano una o più parole d
 - SRAM: 4 kb, FLASH: 64 kb
 - Devices: timer, digital I/O (8+4 bit), I2c, SPI, UART, DAC, ADC, memoria esterna, sensore temperatura
 
-# Periferiche
+# 4. Periferiche
 
-**Comparatori** ricevono in ingresso due segnali analogici e ritornano un segnale alto o basso se il primo segnale è maggiore o minore del secondo.
+I **Comparatori** ricevono in ingresso due segnali analogici e ritornano un segnale alto o basso se il primo segnale è maggiore o minore del secondo.
 
 ## Timer
 Periferica che genera un segnale dopo un certo intervallo temporale.
@@ -454,9 +466,27 @@ L'operazione di quantizzazione di un segnale analogico non è trasparente, ed in
 Questo "rumore" è distribuito uniformemente nell'intervallo +- 1/2 LSB:
 
 Assumendo 1 Ohm R:
+
 - Valore medio nullo
-- Deviazione standard = LSB / rad(12) = 0.29 LSB
-- Potenza = varianza = LSB^2 / 12
+- **Deviazione standard** = LSB / rad(12) = 0.29 LSB
+- **Potenza** = varianza = LSB^2 / 12
+
+### Range dinamico 
+La precisione `p` di un sensore è la minima differenza tra due valori x(t) percepibili dal sensore. Il range dinamico `D` è il rapporto `(H - L)/ p` tra il range di un sensore e la sua precisione. Si misura normalmente in decibel: `D(db) = 20log10 (H-L)/ p`.
+
+
+### Rumore
+Per "rumore" si intende qualsiasi sorgente che introduce imprecisione e inquina la misurazione (da non confondere con il caso particolare di quello relativo alla quantizzazione, intrinseco all'operazione stessa). Il sensore misura dunque $x'(t)=x(t)+n(t)$.
+
+Il rapporto segnale/rumore (SNR) è dato dal rapporto tra potenza del segnale e quella del rumore. In decibel:
+
+$SNR_{dB}=20log_{10}=\frac{x_{RMS}}{n_{RMS}}$
+
+Dove:
+
+$\mathlarger{g_{RMS}= \lim_{T\to\infty} \sqrt{\frac{1}{2T}\int_{-T}^{T} g^2 dt}}$
+
+Il **range dinamico** è, in questo caso, è il rapporto segnale/rumore tra il massimo segnale che non satura la misurazione e il minimo segnale individuabile (R di quantizzazione).
 
 ### Tipi di convertitori A/D
 
@@ -466,21 +496,35 @@ Assumendo 1 Ohm R:
 - Delta-Sigma
 - Flash: meno precisi, minore ritardo di conversione, maggiore frequenza massima di campionamento, più complesso in generale (realizzati  con molte resistenze)
 
-todo: codec
+### Codec
+Coppie di convertitori A/D -> D/A che rispettano un dato standard sono detti codec. La quantizzazione è un esempio di codec *lineare*.
 
+Un altro esempio sono i codec A-law e u-law per i segnali audio:
 
-# Attuatori
+- Sono più precisi intorno allo 0 (non linearità);
+- riducono il rumore di quantizzazione con segnali a basso volume.
+
+### Accelerometri
+Misurano l'accelerazione propria in una certa direzione. Funzionano misurando la posizione rispetto ad un intelaiatura fissa di una massa mobile fissata con una molla. Confrontando l'accelerazione misurata con quella di gravità si può misurare l'inclinazione rispetto alla verticale. Si possono utilizzare per stimare velocità e posizione integrando l'accelerazione nel tempo:
+
+$p(t) = p(0)+\int_{0}^{t} v(t)dt$
+
+$v(t) = v(0)+\int_{0}^{t}x(t)dt$
+
+## Attuatori
 Un attuatore è un meccanismo attraverso cui un agente agisce su un ambiente, inoltre l'agente può essere o un agente intelligente artificiale o un qualsiasi altro essere autonomo (umano, animale). In senso lato, un attuatore è talvolta definito come un qualsiasi dispositivo che converte dell'energia da una forma ad un'altra, in modo che questa agisca nell'ambiente fisico al posto dell'uomo.
 
 Anche un meccanismo che mette qualcosa in azione automaticamente è detto attuatore.
 
-## Solenoidi lineari
+### Solenoidi lineari
 Attuatori di movimento: basati sul campo magnetico prodotto dalla corrente che attraversa un avvolgirmento e sposta una barra metallica. I solenoidi latching (bistabili) mantengono lo stato allo spegnimento dell'alimentazione.
 
-## Motori DC
+### Motori DC
 Producono un momento meccanico proporzionale alla corrente che attraversa il motore, possono essere comandati via PWM se dotati di opportuna scheda di controllo.
 
 todo: formule?
 
-# Scheduling
+# 5. Scheduling
 todo
+
+# 6. Pogrammazione
