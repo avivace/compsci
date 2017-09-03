@@ -1,6 +1,24 @@
 ## Simplesso
+```
+CP=c <<; c<0
+RP=b_i / c_i <<; c_i > 0
+ElementoPivot = (RP,CP) 
+b = colonna termini noti
+Variabile NB = Variabile non in base
+Variabile B = Variabile in base
 
-[...]
+While(!(coeff su Riga0 tutti >= 0)) {
+    RigaPivot = RigaPivot / ElementoPivot
+    foreach (riga i con (i,CP) > 0):
+        R_i = R_i + |(i,CP)|*RP
+    foreach (riga i con (i,CP) < 0):
+        R_i = R_i - |(i,CP)|*RP
+    foreach (riga i con (i,CP) = 0):
+        R_i = R_i
+    }
+BFS = (Variabili NB = 0, i-esima variabile B = b_i)
+
+```
 
 ## Sensitività
 Intervallo di variazione di ciascuna risorsa affinchè la soluzione ottima rimanga ammissibile:
