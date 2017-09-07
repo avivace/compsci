@@ -2,6 +2,7 @@
 
 ## Simplesso
 
+
 ```python
 MAX cx = MIN -cx
 
@@ -37,7 +38,7 @@ while(!(coeff su Riga0 tutti >= 0)) {
         R_i = R_i - |(i,CP)|*RP
     foreach (riga i con (i,CP) = 0):
         R_i = R_i
-    }
+    }l
 BFS = (Variabili NB = 0, i-esima variabile B = b_i)
 
 ```
@@ -67,7 +68,7 @@ VVO * A - CR = Vettore Colonna nuova attività x_c
 
 ```
 
-###
+### 
 
 ```
 
@@ -86,32 +87,7 @@ y*(b - Ax*) = 0
 ```
 
 
-## KKT
 
- 
-1. Ad ogni vincolo, associare una delta_i.
-2. Vincoli di *ammissibilità duale* relativi ai delta_i (inverto segni, = variabile senza vincoli)
-3. Condizioni di *complementarietà*
-
-    delta_i (i-esimo vincolo) = 0
-
-4. Condizioni sul *gradiente*
-
-    (dFO/dx, dFO/dy) - delta_i (dVi/dx, dVi/dy) = 0 (per tutte le i)
-
-5. Definire 2^n sviluppi, combinare le condizioni
 
 ## PERT/CPM
 
-a) Dato il grafo delle precedenze tra le attività di un progetto e la loro durata media, come si determinano le loro attività critiche?
-
-`t_min` di un'attività è il tempo minimo entro cui si possono terminare tutte le fasi necessarie per iniziarla. Le prime hanno t_min = 0, per ogni altra attività sequente A, tmin(A) è la massima somma tra tmin(P)+durata(P) dei predecessori, con P predecessore con tale massimo valore.
-
-`t_max` di un'attività è il massimo tempo entro cui devo iniziare l'attività stessa,  pena un aumento del tempo minimo per completare il progetto. L'ultima attività ha `t_min=t_max`, per ogni altra tmax è la differenza minima tra la durata di P e tmax di un successore A.
-
-Un'**attività critica** è un'attività che ha `slack = 0`. `Slack = t_max - t_min`.
-Un percorso critico è la sequenza più lunga di attività critiche.
-
-b) Perchè sono dette critiche?
-
-Un'attività è detta *critica* è un'attività il cui inizio non può essere ritardato nemmeno di un'unità di tempo, altrimenti l'intera durata minima del progetto in esame verrebbe aumentata.
