@@ -1,3 +1,5 @@
+# Ricerca Operativa
+
 ## Problemi di PL
 
 **Var non di base** var uguale a 0
@@ -12,7 +14,19 @@
 
 **Sol non di base** sol aumentata che non sta su un vertice (senza variabili di slack)
 
-### 1) Quale è il tasso di variazione della funzione obiettivo al variare dei termini noti?
+### Una soluzione NON di base di un problema di PL può appartenere alla regione ammissibile?
+
+**Vero**, la regione ammissibile è semplicemente definita dai vincoli. Una soluzione di base soddisfa tutti i vincoli, ma non è su uno dei vertici.
+
+### Quante variabili possono assumere valore diverso da zero in una soluzione di base?
+
+Sia *n* il numero di vincoli funzionali del problema di PL, *n* variabili sono di base e dunque potranno assumere valori non nulli.
+
+### In una soluzione di base ammissibile, tutte le variabili nulle sono necessariamente fuori base?
+
+**Falso**, le variabili di base possono assumere valore nullo. In particolare, se qualche variabile di base vale 0 in una soluzione di base ammissibile, essa si dice *degenere*.
+
+### Quale è il tasso di variazione della funzione obiettivo al variare dei termini noti?
 
 Il tasso di variazione coincide con i prezzi ombra.
 
@@ -36,7 +50,7 @@ Per tutti i coeff $\neq 0, 1$ su $R$:
 $coeff_i(R_0) + \delta coeff_i(R) \geq 0$
 
 
-### 2) Impostare le relazioni di complementarietà che le soluzioni ottime del primale e del duale devono soddisfare
+### Impostare le relazioni di complementarietà che le soluzioni ottime del primale e del duale devono soddisfare
 
 Sia:
 
@@ -52,19 +66,7 @@ $u_j(b_j - Ax_j) = 0$
 
 $(yA_i - c_i)x_i = 0$
 
-### 3) Una soluzione NON di base di un problema di PL può appartenere alla regione ammissibile?
-
-**Vero**, la regione ammissibile è semplicemente definita dai vincoli. Una soluzione di base soddisfa tutti i vincoli, ma non è su uno dei vertici.
-
-### 4) Quante variabili possono assumere valore diverso da zero in una soluzione di base?
-
-Sia *n* il numero di vincoli funzionali del problema di PL, *n* variabili sono di base e dunque potranno assumere valori non nulli.
-
-### 5) In una soluzione di base ammissibile, tutte le variabili nulle sono necessariamente fuori base?
-
-**Falso**, le variabili di base possono assumere valore nullo. In particolare, se qualche variabile di base vale 0 in una soluzione di base ammissibile, essa si dice *degenere*.
-
-### 6) Data una soluzione ottima corrente, determinare se è opportuno introdurre una nuova attività $x_6$. Se sì, calcolare la nuova soluzione ottima.
+### Data una soluzione ottima corrente, determinare se è opportuno introdurre una nuova attività $x_6$. Se sì, calcolare la nuova soluzione ottima.
 
 Sia $(x)$ la soluzione ottima corrente, controllare che $(x,0)$ sia ancora valida e ottima:
 
@@ -102,6 +104,35 @@ Un percorso critico è la sequenza più lunga di attività critiche.
 
 Un'attività è detta *critica* è un'attività il cui inizio non può essere ritardato nemmeno di un'unità di tempo, altrimenti l'intera durata minima del progetto in esame verrebbe aumentata.
 
+### Teorema di dualità debole
+
+Data una coppia Primale-Duale min ${c^T x : Ax \geq d, x \geq 0}$, max ${u^T d: u^T A \leq c^T , u \geq 0}$:
+
+Sia X la regione d'ammissibilità di P ed U quella di D, per ogni $x \in X$, $u \in U$ risulta: $c^T x\geq u^Td$
+
+### Teorema di dualità forte
+
+Se il primale ha soluzione ottima finita:
+
+1) anche il suo duale ha soluzione ottima finita;
+2) i valori della due soluzioni sono uguali.
+
+### Dare un esempio di utilizzo del teorema di dualità
+
+Le proprietà del problema duale definite dal teorema di dualità ci interessano perchè:
+
+- Il problema duale può essere più facile da risolvere (meno vincoli, conviene)
+- Il problema duale corrisponde ad una diversa visione dello stesso problema
+- Molti algoritmi utilizzano aspetti della dualità, quali il Simplesso Duale, Primale/Duale, alternativi al Simplesso utili per certe classi di problemi
+- Il problema duale fornisce bounds utili per risolvere problemi a variabili intere (Branch and Bound)
+- Condizioni di ottimalità
+
+### Dare la definizione di soluzione di base
+
+
+### Dire se la soluzione ottimale di un problema di PL può essere non di base, giustificando la risposta
+
+**Vero**, potrebbero esserci più di una BFS collegate da un segmento che danno vita dunque a infinite combinazioni convesse dei due vertici.
 
 ## Programmazione non lineare
 
