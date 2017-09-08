@@ -129,6 +129,21 @@ Le proprietà del problema duale definite dal teorema di dualità ci interessano
 
 ### Dare la definizione di soluzione di base
 
+**Soluzione ammissibile** è una soluzione che soddisfa il sistema di equazioni dela forma aumentata e che ha tutte le variabili non negative.
+
+**Soluzione di base** È un vertice a cui sono stati aggiunti i corrispondenti valori delle variabili di slack. Gode delle seguenti proprietà:
+
+- Ogni variabile è una variabile di base o non di base;
+- Il numero delle variabili di base è uguale al numero di vincoli funzionali. Numero di variabili non di base = numero delle variabili - numero vincoli funzionali;
+- Le variabili non di base sono poste a 0;
+- I valori delle variabili di base sono le soluzioni del sistema di equazioni.
+- Se le variabili di base soddisfano i vincoli di non negatività, la soluzione di base è una BFS.
+
+**Soluzione aumentata** È una soluzione per la quale alle variabili originali sono aggiunte le variabili di slack
+
+**Soluzione di base ammissibile** (BFS) è un vertice ammissibile cui sono stati aggiunti i corrispondenti valori delle variabili di slack
+
+Una soluzione di base con le variabili di base che soddisfano i vincoli di non negatività è una BFS.
 
 ### Dire se la soluzione ottimale di un problema di PL può essere non di base, giustificando la risposta
 
