@@ -1,4 +1,52 @@
-# Ricerca Operativa
+# Programmazione Lineare
+
+## Metodo del Simplesso
+
+```python
+MAX cx = MIN -cx
+
+    Problema di MIN
+
+b = colonna termini noti
+Variabile NB = Variabile non in base
+Variabile B = Variabile in base
+
+
+PickEP {
+    CP=c <<; c<0
+    RP=b_i / c_i <<; c_i > 0
+    # Se tutti i rapporti b_i/c_i sono negativi,
+    #  il problema è illimitato
+    ElementoPivot = (RP,CP) 
+}
+
+prepareSimplex {
+    # I termini noti devono essere >= 0
+    # Tutti i vincoli del tipo <= (Min) o >= (Max)
+    # La matrice aggiunta delle variabili di Slack 
+    #  deve essere una matrice sidentità
+    # Sopra la matrice identità, i coefficienti 
+    #  devono essere 0 (due fasi)
+    # Se il problema è di Massimo,
+    #  invertire i coefficienti sulla riga 0
+}
+
+prepareSimplex()
+while(!(coeff su Riga0 tutti >= 0)) {
+    PickEP()
+    # La variabile sulla colonna CP va in base, 
+    #  sostituendo quella precedente sulla RP.
+    RP = RP / EP
+    for each (riga i con (i,CP) > 0):
+        R_i = R_i + |(i,CP)|*RP
+    foreach (riga i con (i,CP) < 0):
+        R_i = R_i - |(i,CP)|*RP
+    foreach (riga i con (i,CP) = 0):
+        R_i = R_i
+    }l
+BFS = (Variabili NB = 0, i-esima variabile B = b_i)
+
+```
 
 ## Problemi di PL
 
@@ -26,6 +74,30 @@ Sia *n* il numero di vincoli funzionali del problema di PL, *n* variabili sono d
 
 **Falso**, le variabili di base possono assumere valore nullo. In particolare, se qualche variabile di base vale 0 in una soluzione di base ammissibile, essa si dice *degenere*.
 
+### Dare la definizione di soluzione di base
+
+**Soluzione ammissibile** è una soluzione che soddisfa il sistema di equazioni dela forma aumentata e che ha tutte le variabili non negative.
+
+**Soluzione di base** È un vertice a cui sono stati aggiunti i corrispondenti valori delle variabili di slack. Gode delle seguenti proprietà:
+
+- Ogni variabile è una variabile di base o non di base;
+- Il numero delle variabili di base è uguale al numero di vincoli funzionali. Numero di variabili non di base = numero delle variabili - numero vincoli funzionali;
+- Le variabili non di base sono poste a 0;
+- I valori delle variabili di base sono le soluzioni del sistema di equazioni.
+- Se le variabili di base soddisfano i vincoli di non negatività, la soluzione di base è una BFS.
+
+**Soluzione aumentata** È una soluzione per la quale alle variabili originali sono aggiunte le variabili di slack
+
+**Soluzione di base ammissibile** (BFS) è un vertice ammissibile cui sono stati aggiunti i corrispondenti valori delle variabili di slack
+
+Una soluzione di base con le variabili di base che soddisfano i vincoli di non negatività è una BFS.
+
+### Dire se la soluzione ottimale di un problema di PL può essere non di base, giustificando la risposta
+
+**Vero**, potrebbero esserci più di una BFS collegate da un segmento che danno vita dunque a infinite combinazioni convesse dei due vertici.
+
+## Sensitività
+
 ### Quale è il tasso di variazione della funzione obiettivo al variare dei termini noti?
 
 Il tasso di variazione coincide con i prezzi ombra.
@@ -48,23 +120,6 @@ Sia $R$ la riga che sulla colonna di $x_i$ ha coefficiente 1:
 Per tutti i coeff $\neq 0, 1$ su $R$:
 
 $coeff_i(R_0) + \delta coeff_i(R) \geq 0$
-
-
-### Impostare le relazioni di complementarietà che le soluzioni ottime del primale e del duale devono soddisfare
-
-Sia:
-
-- $x_i$ le variabili del primale;
-- $u_j$ le variabili del duale;
-- $b_j$ il j-esimo termine noto del primale;
-- $Ax_j$ i termini del j-esimo vincolo funzionale del primale;
-- $c_i$ l'i-esimo termine noto del duale;
-- $yA_i$ i termini dell'i-esimo vincolo funzionale del duale.
-
-
-$u_j(b_j - Ax_j) = 0$
-
-$(yA_i - c_i)x_i = 0$
 
 ### Data una soluzione ottima corrente, determinare se è opportuno introdurre una nuova attività $x_6$. Se sì, calcolare la nuova soluzione ottima.
 
@@ -90,19 +145,33 @@ Per calcolare la nuova soluzione, si ripete il simplesso aggiornando il tableau 
 - Sulla riga 0, il coefficente della nuova attività è il costo ridotto calcolato prima
 - La colonna della nuova variabile si calcola moltiplicando la matrice delle variabili di slack (escludendo sempre la riga 0) per il vettore colonna tecnologico della nuova attività: $B^{-1} * A_6$
 
+### (???) Calcolare il vettore colonna relativo all'introduzione di una nuova attività x_c con costo ridotto 3 e vettore variabili tecnologiche A = (3,2,1)
+```python
+Vettore Variabili Ombra = Vettore coefficienti variabili ombra sulla Riga 0
+CR = Costo Ridotto
+A = Vettore variabili tecnologiche
 
-### Dato il grafo delle precedenze tra le attività di un progetto e la loro durata media, come si determinano le loro attività critiche?
+VVO * A - CR = Vettore Colonna nuova attività x_c
 
-`t_min` di un'attività è il tempo minimo entro cui si possono terminare tutte le fasi necessarie per iniziarla. Le prime hanno t_min = 0, per ogni altra attività sequente A, tmin(A) è la massima somma tra tmin(P)+durata(P) dei predecessori, con P predecessore con tale massimo valore.
+```
 
-`t_max` di un'attività è il massimo tempo entro cui devo iniziare l'attività stessa,  pena un aumento del tempo minimo per completare il progetto. L'ultima attività ha `t_min=t_max`, per ogni altra tmax è la differenza minima tra la durata di P e tmax di un successore A.
+## Dualità
 
-Un'**attività critica** è un'attività che ha `slack = 0`. `Slack = t_max - t_min`.
-Un percorso critico è la sequenza più lunga di attività critiche.
+### Impostare le relazioni di complementarietà che le soluzioni ottime del primale e del duale devono soddisfare
 
-### Perchè sono dette critiche?
+Sia:
 
-Un'attività è detta *critica* è un'attività il cui inizio non può essere ritardato nemmeno di un'unità di tempo, altrimenti l'intera durata minima del progetto in esame verrebbe aumentata.
+- $x_i$ le variabili del primale;
+- $u_j$ le variabili del duale;
+- $b_j$ il j-esimo termine noto del primale;
+- $Ax_j$ i termini del j-esimo vincolo funzionale del primale;
+- $c_i$ l'i-esimo termine noto del duale;
+- $yA_i$ i termini dell'i-esimo vincolo funzionale del duale.
+
+
+$u_j(b_j - Ax_j) = 0$
+
+$(yA_i - c_i)x_i = 0$
 
 ### Teorema di dualità debole
 
@@ -127,29 +196,20 @@ Le proprietà del problema duale definite dal teorema di dualità ci interessano
 - Il problema duale fornisce bounds utili per risolvere problemi a variabili intere (Branch and Bound)
 - Condizioni di ottimalità
 
-### Dare la definizione di soluzione di base
+### Dato il grafo delle precedenze tra le attività di un progetto e la loro durata media, come si determinano le loro attività critiche?
 
-**Soluzione ammissibile** è una soluzione che soddisfa il sistema di equazioni dela forma aumentata e che ha tutte le variabili non negative.
+`t_min` di un'attività è il tempo minimo entro cui si possono terminare tutte le fasi necessarie per iniziarla. Le prime hanno t_min = 0, per ogni altra attività sequente A, tmin(A) è la massima somma tra tmin(P)+durata(P) dei predecessori, con P predecessore con tale massimo valore.
 
-**Soluzione di base** È un vertice a cui sono stati aggiunti i corrispondenti valori delle variabili di slack. Gode delle seguenti proprietà:
+`t_max` di un'attività è il massimo tempo entro cui devo iniziare l'attività stessa,  pena un aumento del tempo minimo per completare il progetto. L'ultima attività ha `t_min=t_max`, per ogni altra tmax è la differenza minima tra la durata di P e tmax di un successore A.
 
-- Ogni variabile è una variabile di base o non di base;
-- Il numero delle variabili di base è uguale al numero di vincoli funzionali. Numero di variabili non di base = numero delle variabili - numero vincoli funzionali;
-- Le variabili non di base sono poste a 0;
-- I valori delle variabili di base sono le soluzioni del sistema di equazioni.
-- Se le variabili di base soddisfano i vincoli di non negatività, la soluzione di base è una BFS.
+Un'**attività critica** è un'attività che ha `slack = 0`. `Slack = t_max - t_min`.
+Un percorso critico è la sequenza più lunga di attività critiche.
 
-**Soluzione aumentata** È una soluzione per la quale alle variabili originali sono aggiunte le variabili di slack
+### Perchè sono dette critiche?
 
-**Soluzione di base ammissibile** (BFS) è un vertice ammissibile cui sono stati aggiunti i corrispondenti valori delle variabili di slack
+Un'attività è detta *critica* è un'attività il cui inizio non può essere ritardato nemmeno di un'unità di tempo, altrimenti l'intera durata minima del progetto in esame verrebbe aumentata.
 
-Una soluzione di base con le variabili di base che soddisfano i vincoli di non negatività è una BFS.
-
-### Dire se la soluzione ottimale di un problema di PL può essere non di base, giustificando la risposta
-
-**Vero**, potrebbero esserci più di una BFS collegate da un segmento che danno vita dunque a infinite combinazioni convesse dei due vertici.
-
-## Programmazione non lineare
+# Programmazione non lineare
 
 ### Elencare le condizioni di ottimalità di KKT
  
@@ -164,3 +224,13 @@ Una soluzione di base con le variabili di base che soddisfano i vincoli di non n
     (dFO/dx, dFO/dy) - delta_i (dVi/dx, dVi/dy) = 0 (per tutte le i)
 
 5. Definire 2^n sviluppi, combinando le condizioni
+
+### Qual è la differenza tra clustering e classificazione?
+
+### Descrivere il metodo del K-Means per il problema di clustering illustrandone vantaggi e svantaggi
+
+### Descrivere la differenza tra classificazione supervisionata e non supervisionata
+
+### Illustrare e formalizzare il problema di clustering (classificazione non supervisionata) come problema di ottimizzazione
+
+### Descrivere brevemente il metodo SVM per la classificazione supervisionata
