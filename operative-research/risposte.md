@@ -288,3 +288,19 @@ Dove
 
 TODO
 
+
+### Gradiente
+
+TODO
+
+### Newton a 2 variabili
+
+TODO
+
+### 2 Fasi
+
+TODO
+
+### Branch & Bound
+
+TODO
