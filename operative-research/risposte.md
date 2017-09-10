@@ -229,9 +229,9 @@ Un'attività è detta *critica* è un'attività il cui inizio non può essere ri
 
 La classificazione è un tipo di apprendimento supervisionato che descrive il problema di identificare a quale di un insieme di categorie appartiene una nuova osservazione, basandosi su di un training set che contiene osservazioni già correttamente identificate.
 
-La classificazione può essere implementata con l'algoritmo `K-Nearest Neighbor`.
+La classificazione può essere implementata con l'algoritmo `K-Nearest Neighbor` o SVM.
 
-Il clustering, è una procedura di che consiste nel raggrouppare un insieme di oggetti in un modo tale che oggetti dello stesso gruppo (chiamato cluster) siano più *simili* tra loro rispetto che a quelli di altri gruppi.
+Il clustering (classificazione non supervisionata) è una procedura di apprendimento non supervisionato che consiste nel raggruppare un insieme di oggetti in un modo tale che oggetti dello stesso gruppo (chiamato cluster) siano più *simili* tra loro rispetto che a quelli di altri gruppi.
 
 Il clustering può essere implementato con l'algoritmo `K-means`.
 
@@ -254,6 +254,22 @@ Pro e Contro:
 
 Formalmente:
 
+```ruby
+
+1: KM(n observations, k) → k clusters
+2:     cs ← Initialize(k)
+3:     clusters ← {}
+4:     clusters0 ← Partition(observations, cs)
+5:     if clusters = clusters0 then
+6:         return clusters
+7:     else
+8:         clusters ← clusters0
+9:         cs ← RecomputeCentroids(clusters)
+10:        goto 4
+11:    end if
+
+```
+
 
 
 ### Illustrare e formalizzare il problema di clustering (classificazione non supervisionata) come problema di ottimizzazione
@@ -266,6 +282,9 @@ Dove
 
 - $k$ è il numero dei cluster;
 - $C_j$ è il $j$-esimo cluster
-- $E : C \rightarrow \mathds{R}$ è la funzione di costo associata al singolo cluster.
+- $E : C \rightarrow \mathds{R}^{+}$ è la funzione di costo associata al singolo cluster.
 
 ### Descrivere brevemente il metodo SVM per la classificazione supervisionata
+
+TODO
+
