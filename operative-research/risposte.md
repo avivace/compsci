@@ -225,12 +225,47 @@ Un'attività è detta *critica* è un'attività il cui inizio non può essere ri
 
 5. Definire 2^n sviluppi, combinando le condizioni
 
-### Qual è la differenza tra clustering e classificazione?
+### Qual è la differenza tra clustering e classificazione? (Descrivere la differenza tra classificazione supervisionata e non supervisionata)
+
+La classificazione è un tipo di apprendimento supervisionato che descrive il problema di identificare a quale di un insieme di categorie appartiene una nuova osservazione, basandosi su di un training set che contiene osservazioni già correttamente identificate.
+
+La classificazione può essere implementata con l'algoritmo `K-Nearest Neighbor`.
+
+Il clustering, è una procedura di che consiste nel raggrouppare un insieme di oggetti in un modo tale che oggetti dello stesso gruppo (chiamato cluster) siano più *simili* tra loro rispetto che a quelli di altri gruppi.
+
+Il clustering può essere implementato con l'algoritmo `K-means`.
+
+#### Differenze
+
+In particolare, il clustering è una tecnica di apprendimento non supervisionata, mentre la classificazione è supervisionata: nella prima non è presente un training set, nella seconda sì. Inoltre, nel clustering vengono usati concetti statistici gli oggetti vengono divisi in cluster con caratteristiche simili. La classificazione usa invece algoritmi che tengono conto del training set. Infine, nel clustering non si fa ricorso ad etichette, mentre nella classificazione sì, per alcuni punti.
+
 
 ### Descrivere il metodo del K-Means per il problema di clustering illustrandone vantaggi e svantaggi
 
-### Descrivere la differenza tra classificazione supervisionata e non supervisionata
+K-Means si prepone di minimizzare la varianza totale intra-cluster. Ogni cluster viene identificato tramite un punto medio o centroide. Vengono create K partizioni e ad ognuna assegnati punti di ingresso (casualmente o usando informazioni euristiche). Viene calcolato il centroide di ogni gruppo e costruita una nuova partizione associando ogni punto d'ingresso al cluster il cui centroide è più vicino. Vengono ricalcolati i centroidi e ripetuta iterativamente la procedura, finchè l'algoritmo non converge.
+
+Pro e Contro:
+
+- È facilmente implementabile/utilizzabile
+- Converge molto velocemente e generalmente il numero di iterazioni è minore del numero di punti. Tuttavia può essere molto lento del caso peggiore (superpolinomiale/esponenziale)
+- Non garantisce il raggiungimento dell'ottimo globale, la qualità della soluzione finale dipende dal set di cluster iniziale e può ottenre una soluzione ben peggiore dell'ottimo globale. Tuttavia, essendo molto veloce, è possibile applicarlo più volte e scegliere tra le soluzioni quella più soddisfacente.
+- Svantaggio: richiede di scegliere il numero di cluster da trovare. Se i dati non sono naturalmente partizionati si ottengono risultati non desiderabili.
+- L'algoritmo funziona bene solo quando sono individuabili cluster sferici di dati.
+
+Formalmente:
+
+
 
 ### Illustrare e formalizzare il problema di clustering (classificazione non supervisionata) come problema di ottimizzazione
+
+Gli algoritmi di clustering partizionale creatno una partizione delle osservazioni minimizzando una certa funzone di costo:
+
+$\mathlarger{\sum_{j=1}^{k} E(C_j)}$
+
+Dove 
+
+- $k$ è il numero dei cluster;
+- $C_j$ è il $j$-esimo cluster
+- $E : C \rightarrow \mathds{R}$ è la funzione di costo associata al singolo cluster.
 
 ### Descrivere brevemente il metodo SVM per la classificazione supervisionata
