@@ -2,6 +2,9 @@
 
 Documentation, digests and resources I’ve compiled for my Computer Science(bachelor's) courses.
 
+## Operations Research
+- [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/operative-research/risposte.pdf)
+
 ## Sicurezza Informatica
 - [Applicazioni](https://github.com/avivace/compsci/blob/master/sicurezza/1applicazioni.pdf)
 - [Crittografia](https://github.com/avivace/compsci/blob/master/sicurezza/2crittografia.pdf)
