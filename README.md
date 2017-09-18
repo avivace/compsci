@@ -5,7 +5,7 @@ Documentation, digests and resources I’ve compiled for my Computer Science(bac
 ## Operations Research
 - [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/operative-research/risposte.pdf)
 
-## Sicurezza Informatica
+## Information Security
 - [Applicazioni](https://github.com/avivace/compsci/blob/master/sicurezza/1applicazioni.pdf)
 - [Crittografia](https://github.com/avivace/compsci/blob/master/sicurezza/2crittografia.pdf)
 - [Sistemi Operativi](https://github.com/avivace/compsci/blob/master/sicurezza/3sistemi_operativi.pdf)
