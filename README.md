@@ -18,11 +18,11 @@ Documentation, digests and resources I’ve compiled for my Computer Science(bac
 - [SQL](https://github.com/avivace/compsci/blob/master/databases/teoria_SQL.pdf)
 
 ## Bioinformatics
-- [Pattern Matching, Suffix Trees and Alignment](https://avivace.ovh/assets/bioinf_theory.pdf)
+- [Pattern Matching, Suffix Trees and Alignment](https://avivace.com/assets/bioinf_theory.pdf)
 
 ## Operative Systems
-- [Process Synchronization, deadlocks](https://avivace.ovh/assets/OS.pdf)
+- [Process Synchronization, deadlocks](https://avivace.com/assets/OS.pdf)
 
 ## Programming Paradigms
-- [Functional Programming and Lisp](https://avivace.ovh/assets/fp_lisp.pdf)
+- [Functional Programming and Lisp](https://avivace.com/assets/fp_lisp.pdf)
 - [mvpoli](https://github.com/avivace/mvpoli), Lisp and Prolog project
