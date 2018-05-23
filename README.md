@@ -1,6 +1,6 @@
 # compsci
 
-Documentation, digests and resources I’ve compiled for my Computer Science(bachelor's) courses.
+Documentation, digests and resources I’ve compiled for my Computer Science (BSc) courses.
 
 ## Operations Research
 - [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/operative-research/risposte.pdf)
@@ -26,3 +26,9 @@ Documentation, digests and resources I’ve compiled for my Computer Science(bac
 ## Programming Paradigms
 - [Functional Programming and Lisp](https://avivace.com/assets/fp_lisp.pdf)
 - [mvpoli](https://github.com/avivace/mvpoli), Lisp and Prolog project
+
+## Embedded Systems
+- [Project](https://github.com/avivace/EmbeddedSystems-8051)
+
+## Stage/Thesis
+- [DNA Recombination](https://github.com/avivace/dna-recombination)
