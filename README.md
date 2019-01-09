@@ -34,6 +34,7 @@ Documentation, digests and resources I’ve compiled for my Computer Science cou
 - [mvpoli](https://github.com/avivace/mvpoli), Lisp and Prolog project
 
 #### Embedded Systems
+- [Theory](https://github.com/avivace/compsci/raw/master/bachelors/embedded-systems/teoria.pdf)
 - [Project](https://github.com/avivace/EmbeddedSystems-8051)
 
 #### Stage/Thesis
