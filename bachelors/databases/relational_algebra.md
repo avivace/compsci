@@ -22,11 +22,11 @@ PROJ Code (SEL Topic='motorcycling'(ARTICLLE))
 PROJ NameM (MAGAZINE (JOIN SEL Topic='motorcycling'(ARTICLE)))
 ```
 
- 4) Trovare il codice delle riviste che hanno pubblicato almeno 2 articoli di motociclismo.
+4) Trovare il codice delle riviste che hanno pubblicato almeno 2 articoli di motociclismo.
 ```
 PROJ CodR (SEL (CodA2!=CodA AND argomento='moticiclismo' AND argomento2='moticiclismo') (ARTICOLO JOIN (REN CodA2, Titolo2, Argomento2 <- CodA, Titolo, Argomento (ARTICOLO))))
 ```
- 
+
 5) Trovare il nome delle riviste che hanno pubblicato almeno 2 articoli di motociclismo.
 
 ```
@@ -43,7 +43,7 @@ PROJ Editore (RIVISTA (JOIN SEL argomento='motociclismo'(ARTICOLO)))
 ```
 (PROJ CodR RIVISTA) - (PROJ CodR (RIVISTA JOIN argomento='motociclismo' (ARTICOLO)))
 ```
- 
+
 8) Trovare gli editori che non hanno mai pubblicato articoli di motociclismo.
 ```
 (PROJ Editore RIVISTA) - (PROJ CodR (RIVISTA JOIN argomento='motociclismo' (ARTICOLO)))
@@ -71,7 +71,7 @@ PROJ Editore (RIVISTA JOIN (SEL (CodA2!=CodA AND argomento='moticiclismo' AND
 argomento2='motociclismo') (ARTICOLO JOIN (REN CodA2, Titolo2, Argomento2 <- CodA, Titolo, Argomento
 (ARTICOLO))))) 
 ```
- 
+
 13) Trovare gli editori che hanno pubblicato un solo articolo (ed uno solo) di motociclismo (possono averpubblicato quanti articoli desiderano relativamente ad altri argomenti).
 ```
 PROJ Editore(((RIVISTA JOIN (ARTICOLO JOIN (REN CodA2, Titolo2, Argomento2 <- CodA, Titolo, Argomento (ARTICOLO)))))) - (RIVISTA JOIN (SEL (CodA2!=CodA AND argomento='moticiclismo' AND argomento2='motociclismo') (ARTICOLO JOIN (REN CodA2, Titolo2, Argomento2 <- CodA, Titolo, Argomento
