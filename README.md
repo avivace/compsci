@@ -2,11 +2,11 @@
 
 Documentation, digests and resources I’ve compiled for my Computer Science courses.
 
-### Master's
+## Master's
 
 #### Data Technology
 
-### Bachelor's
+## Bachelor's
 
 #### Operations Research
 - [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/operative-research/risposte.pdf)
