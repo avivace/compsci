@@ -24,13 +24,13 @@ Documentation, digests and resources I’ve compiled for my Computer Science cou
 - [SQL](https://github.com/avivace/compsci/blob/master/databases/teoria_SQL.pdf)
 
 #### Bioinformatics
-- [Pattern Matching, Suffix Trees and Alignment](https://avivace.com/assets/bioinf_theory.pdf)
+- [Pattern Matching, Suffix Trees and Alignment](https://github.com/avivace/compsci/raw/master/bachelors/bioinformatics/bio.pdf)
 
 #### Operative Systems
 - [Process Synchronization, deadlocks](https://avivace.com/assets/OS.pdf)
 
 #### Programming Paradigms
-- [Functional Programming and Lisp](https://avivace.com/assets/fp_lisp.pdf)
+- [Functional Programming and Lisp](https://github.com/avivace/compsci/raw/master/bachelors/programming-paradigms/FP_Lisp.pdf)
 - [mvpoli](https://github.com/avivace/mvpoli), Lisp and Prolog project
 
 #### Embedded Systems
