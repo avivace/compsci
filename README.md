@@ -2,9 +2,13 @@
 
 Documentation, digests and resources I’ve compiled for my Computer Science courses.
 
+Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o $file_base_name.pdf template.tex`. The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
+
 ## Master's
 
 #### Data Technology
+
+- [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/raw/master/masters/datatech/2.pdf)
 
 ## Bachelor's
 
