@@ -11,6 +11,10 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 - [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/raw/master/masters/datatech/2.pdf)
 - [Data Quality dimensions](https://github.com/avivace/compsci/raw/master/masters/datatech/dataquality.pdf)
 
+#### Machine Learning
+
+- [Perceptrons and SVM definitions](https://github.com/avivace/compsci/raw/master/masters/machinelearning/domande.pdf)
+
 ---
 
 ## Bachelor's
