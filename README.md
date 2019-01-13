@@ -57,4 +57,4 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
     + continuos display of the value on the LCD display, 
     + LCD controls (turn on, off, backlight intensity) with an hardware button.
 
-Using interrupts and PWM techniques.
+    Using interrupts and PWM techniques.
