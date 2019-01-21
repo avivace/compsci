@@ -13,12 +13,15 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 
 #### Machine Learning
 
-- [Final Project](https://github.com/avivace/VHDLtrafficlights) - Implement a semaphore with a Xilinx FPGA.
+- [Perceptrons and SVM definitions](https://github.com/avivace/compsci/raw/master/masters/machinelearning/domande.pdf)
 
 
 #### Digital Systems
 
-- [Perceptrons and SVM definitions](https://github.com/avivace/compsci/raw/master/masters/machinelearning/domande.pdf)
+- [Final Project](https://github.com/avivace/VHDLtrafficlights) - Implement a semaphore with a Xilinx FPGA.
+
+
+
 
 ---
 
