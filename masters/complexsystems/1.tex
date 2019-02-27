@@ -28,7 +28,14 @@ Una \textit{distanza}, tra due elementi dell'insieme $X$, è una qualunque funzi
 
 Ad esempio:
 
-$$d(x,y) = 0 \text{ se } x = y, \frac{1}{2^n} \text{ altrimenti.}$$
+
+\begin{equation}    
+d(x,y)= 
+\begin{cases}
+    0,& \text{se } x=y\\
+    \frac{1}{2^n},              & \text{altrimenti}
+\end{cases}
+\end{equation}
 
 Dove
 $$n = min\{ i \in \mathds{N} | x_i \neq y_i \vee x_{-i} \neq y_{-i} \} $$ $i$ è la larghezza della finestra che allarghiamo simmetricamente alla ricerca del primo valore diverso.
@@ -37,10 +44,19 @@ $$n = min\{ i \in \mathds{N} | x_i \neq y_i \vee x_{-i} \neq y_{-i} \} $$ $i$ è
 $$x[a,b] = x_a, x_{a+1}, .. x_{b} \in A^{b-a+1}
 $$
 
-\paragraph{Proposizione} Vicinanza. $\forall x,y \in A^\mathds{Z}, \forall n \in \mathds{N}$
-$$d(x,y) < \frac{1}{2^n} \iff x[-n,n] = y[-n,n]$$
 
+\paragraph{Proposizione} Vicinanza. $\forall x,y \in A^\mathds{Z}, \forall n \in \mathds{N}:$
+\begin{equation}   d(x,y) < \frac{1}{2^n} \iff x[-n,n] = y[-n,n]
+\end{equation}
 
 \subsection{Definizione formale}
+
+Un automa cellulare unidimensionale è una tripla $<A, r, f>$, dove:
+
+\begin{itemize}
+	\item $A$ alfabeto
+	\item $r \in \mathds{N}$ raggio
+	\item $f: A^{2r+1} \rightarrow A$ regola locale
+	\end{itemize}
 
 \end{document}
