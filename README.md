@@ -50,7 +50,7 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 
 #### Bioinformatics
 
-- [Pattern Matching, Suffix Trees and Alignment](https://github.com/avivace/compsci/raw/master/bachelors/bioinformatics/bio.pdf)
+- Theory: [Pattern Matching, Suffix Trees and Alignment](https://github.com/avivace/compsci/raw/master/bachelors/bioinformatics/bio.pdf)
 - Final project: [scripts](https://github.com/avivace/bio-p), [final PR](https://github.com/avivace/rgfa). Add a method to compare sequence graphs to the RGFA library (Ruby).
 
 #### Operative Systems
@@ -58,7 +58,7 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 
 #### Programming Paradigms
 
-- [Functional Programming and Lisp](https://github.com/avivace/compsci/raw/master/bachelors/programming-paradigms/FP_Lisp.pdf)
+- Theory: [Functional Programming and Lisp](https://github.com/avivace/compsci/raw/master/bachelors/programming-paradigms/FP_Lisp.pdf)
 - [Final project](https://github.com/avivace/mvpoli). Two libraries (Prolog and Common Lisp) to manipulate multivariate polynomials. Available predicates allows parsing, sorting, operations(sum, product), evaluating and printing polynomials.
 
 #### Embedded Systems
