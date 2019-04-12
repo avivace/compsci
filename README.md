@@ -6,22 +6,24 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 
 ## Master's
 
-#### Data Technology
+#### Data Technology and Machine Learning
 
 - [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/raw/master/masters/datatech/2.pdf)
 - [Data Quality dimensions](https://github.com/avivace/compsci/raw/master/masters/datatech/dataquality.pdf)
+- [Basket Shots](https://github.com/avivace/basket-shots) - Final course project. Predicting Basket Shots outcomes using Suppor Vector Machines.
 
-#### Machine Learning
+#### Informatics for industrial applications (Digital systems)
 
-- [Perceptrons and SVM definitions](https://github.com/avivace/compsci/raw/master/masters/machinelearning/domande.pdf)
+- [VHDLtrafficlights](https://github.com/avivace/) - Final course project. Implement a semaphore with a Xilinx FPGA.
 
+#### Probabilistic Models for decision making course
 
-#### Digital Systems
+- [kalman2d](https://github.com/avivace/kalman) - Final course project. Interactive 2D simulation of the Kalman Filter in use to reduce input noise.
 
-- [Final Project](https://github.com/avivace/VHDLtrafficlights) - Implement a semaphore with a Xilinx FPGA.
+#### Methods of Scientific Computing
 
-
-
+- [MSC1-SparseMatrix](https://github.com/avivace/mcs1-sparsematrix)
+- [MSC2-DCT](https://github.com/avivace/mcs2-dct)
 
 ---
 
