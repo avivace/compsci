@@ -1,6 +1,6 @@
 # compsci
 
-Documentation, digests and resources I’ve compiled for my Computer Science courses.
+Documentation, digests, resources and projects for my Computer Science courses.
 
 Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o $file_base_name.pdf template.tex`. The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
 
@@ -16,7 +16,7 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 
 - [VHDLtrafficlights](https://github.com/avivace/) - Final course project. Implement a semaphore with a Xilinx FPGA.
 
-#### Probabilistic Models for decision making course
+#### Probabilistic Models for decision making
 
 - [kalman2d](https://github.com/avivace/kalman) - Final course project. Interactive 2D simulation of the Kalman Filter in use to reduce input noise.
 
