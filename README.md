@@ -1,8 +1,28 @@
 # compsci
 
-Documentation, digests, resources and projects for my Computer Science courses.
+Documentation, resources, projects and lecture notes on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in Computer Science.
 
-Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o $file_base_name.pdf template.tex`. The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
+You're welcome to report errors, improvements or feedbacks as Issues, or directly Pull Request.
+
+### Contents
+
+- [Master's](#master-s)
+    + [Data Technology and Machine Learning](#data-technology-and-machine-learning)
+    + [Informatics for industrial applications (Digital systems)](#informatics-for-industrial-applications--digital-systems-)
+    + [Probabilistic Models for decision making](#probabilistic-models-for-decision-making)
+    + [Methods of Scientific Computing](#methods-of-scientific-computing)
+- [Bachelor's](#bachelor-s)
+    + [Stage/Thesis](#internship-thesis)
+    + [Operations Research](#operations-research)
+    + [Information Security](#information-security)
+    + [Databases](#databases)
+    + [Bioinformatics](#bioinformatics)
+    + [Operative Systems](#operative-systems)
+    + [Programming Paradigms](#programming-paradigms)
+    + [Embedded Systems](#embedded-systems)
+- [Resources](#resources)
+- [Building](#building)
+
 
 ## Master's
 
@@ -25,11 +45,10 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 - [MSC1-SparseMatrix](https://github.com/avivace/mcs1-sparsematrix)
 - [MSC2-DCT](https://github.com/avivace/mcs2-dct)
 
----
 
 ## Bachelor's
 
-#### Stage/Thesis
+#### Internship/Thesis
 
 - [DNA Recombination](https://github.com/avivace/dna-recombination).  Approaching a Computational Biology problem with integer linear programming tools.
 
@@ -56,6 +75,7 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
 - Final project: [scripts](https://github.com/avivace/bio-p), [final PR](https://github.com/avivace/rgfa). Add a method to compare sequence graphs to the RGFA library (Ruby).
 
 #### Operative Systems
+
 - [Process Synchronization, deadlocks](https://avivace.com/assets/OS.pdf)
 
 #### Programming Paradigms
@@ -72,3 +92,9 @@ Markdown files are compiled to PDF using _pandoc_: `pandoc $file_base_name.md -o
     + LCD controls (turn on, off, backlight intensity) with an hardware button.
 
     Using interrupts and PWM techniques.
+
+### Resources
+
+### Building
+
+Markdown files are compiled to PDF using _pandoc_.`pandoc $file_base_name.md -o $file_base_name.pdf template.tex`. The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
