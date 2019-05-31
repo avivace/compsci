@@ -4,6 +4,8 @@ Documentation, resources, projects and lecture notes on the courses I attended a
 
 You're welcome to report errors, improvements or feedbacks as Issues, or directly Pull Request.
 
+PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or clone from the GitHub website).
+
 ### Contents
 
 - [Master's](#master-s)
