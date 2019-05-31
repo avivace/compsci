@@ -8,6 +8,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 ### Contents
 
+- [Resources](#resources)
 - [Master's](#master-s)
     + [Data Technology and Machine Learning](#data-technology-and-machine-learning)
     + [Informatics for industrial applications (Digital systems)](#informatics-for-industrial-applications--digital-systems-)
@@ -22,9 +23,19 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
     + [Operative Systems](#operative-systems)
     + [Programming Paradigms](#programming-paradigms)
     + [Embedded Systems](#embedded-systems)
-- [Resources](#resources)
 - [Building](#building)
 
+## Resources
+
+More courses notes:
+
+- [Cristian Baldi](https://github.com/crisbal/Appunti-Unimib)
+
+Some theses I appreciated / used as examples for the graduating students I advised:
+
+- [Manuel Rota (advisor Raimondo Schettini)- Rilevamento di elementi testuali in immagini digitali](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks.
+- [Lorenzo Soligo (advisor Fabio Stella) - Generazione di reti Bayesiane
+a partire da ontologie](https://gitlab.com/LolloneS/Tesi-Triennale)
 
 ## Master's
 
@@ -94,8 +105,6 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
     + LCD controls (turn on, off, backlight intensity) with an hardware button.
 
     Using interrupts and PWM techniques.
-
-### Resources
 
 ### Building
 
