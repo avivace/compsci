@@ -9,33 +9,34 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 ### Contents
 
 - [Resources](#resources)
-- [Master's](#master-s)
-    + [Data Technology and Machine Learning](#data-technology-and-machine-learning)
-    + [Informatics for industrial applications (Digital systems)](#informatics-for-industrial-applications--digital-systems-)
-    + [Probabilistic Models for decision making](#probabilistic-models-for-decision-making)
-    + [Methods of Scientific Computing](#methods-of-scientific-computing)
-- [Bachelor's](#bachelor-s)
-    + [Stage/Thesis](#internship-thesis)
-    + [Operations Research](#operations-research)
-    + [Information Security](#information-security)
-    + [Databases](#databases)
-    + [Bioinformatics](#bioinformatics)
-    + [Operative Systems](#operative-systems)
-    + [Programming Paradigms](#programming-paradigms)
-    + [Embedded Systems](#embedded-systems)
+- [Master's](#masters)
+    + Data Technology and Machine Learning
+    + Informatics for industrial applications (Digital systems)
+    + Probabilistic Models for decision making
+    + Methods of Scientific Computing
+- [Bachelor's](#bachelors)
+    + Stage/Thesis
+    + Operations Research
+    + Information Security
+    + Databases
+    + Bioinformatics
+    + Operative Systems
+    + Programming Paradigms
+    + Embedded Systems
 - [Building](#building)
 
 ## Resources
 
 More courses notes:
 
-- [Cristian Baldi](https://github.com/crisbal/Appunti-Unimib)
+- [C. Baldi](https://github.com/crisbal/Appunti-Unimib)
 
 Some theses I appreciated / used as examples for the graduating students I advised:
 
-- [Manuel Rota (advisor Raimondo Schettini)- Rilevamento di elementi testuali in immagini digitali](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks.
-- [Lorenzo Soligo (advisor Fabio Stella) - Generazione di reti Bayesiane
-a partire da ontologie](https://gitlab.com/LolloneS/Tesi-Triennale)
+- [M. Rota - Rilevamento di elementi testuali in immagini digitali](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks. Advisors: R. Schettini, M.Buzzelli.
+- [L. Soligo - Generazione di reti Bayesiane
+a partire da ontologie](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors: F. Stella, G. Sottocornola.
+- [R. Pozzi - Aggiornamento e ripristino delle funzionalità in sistemi Linux Embedded](https://gitlab.com/rpo254/texis/blob/master/Tesi.pdf) - Advisors: L. Mariani, A. Vivace.
 
 ## Master's
 
