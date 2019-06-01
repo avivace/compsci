@@ -1,6 +1,6 @@
 # compsci
 
-Documentation, resources, projects and lecture notes on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in Computer Science.
+Documentation, resources, projects and lecture notes on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in *Computer Science*.
 
 You're welcome to report errors, improvements or feedbacks as Issues, or directly Pull Request.
 
@@ -33,18 +33,20 @@ More courses notes:
 
 Some theses I appreciated / used as examples for the graduating students I advised:
 
-- [M. Rota - Rilevamento di elementi testuali in immagini digitali](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks. Advisors: R. Schettini, M.Buzzelli.
-- [L. Soligo - Generazione di reti Bayesiane
-a partire da ontologie](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors: F. Stella, G. Sottocornola.
-- [R. Pozzi - Aggiornamento e ripristino delle funzionalità in sistemi Linux Embedded](https://gitlab.com/rpo254/texis/blob/master/Tesi.pdf) - Advisors: L. Mariani, A. Vivace.
+- [M. Rota - *Rilevamento di elementi testuali in immagini digitali*](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks. Advisors: R. Schettini, M.Buzzelli.
+- [L. Soligo - *Generazione di reti Bayesiane
+a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors: F. Stella, G. Sottocornola.
+- [R. Pozzi - A*ggiornamento e ripristino delle funzionalità in sistemi Linux Embedded*](https://gitlab.com/rpo254/texis/blob/master/Tesi.pdf) - Advisors: L. Mariani, A. Vivace.
 
 ## Master's
 
+2018-2019
+
 #### Data Technology and Machine Learning
 
-- [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/raw/master/masters/datatech/2.pdf)
-- [Data Quality dimensions](https://github.com/avivace/compsci/raw/master/masters/datatech/dataquality.pdf)
-- [Basket Shots](https://github.com/avivace/basket-shots) - Final course project. Predicting Basket Shots outcomes using Suppor Vector Machines.
+- [Basket Shots](https://github.com/avivace/basket-shots) - Final course project. Predicting Basket Shots outcomes using Suppor Vector Machines ([documentation](https://github.com/avivace/basket-shots/raw/master/docs/index.pdf)).
+- Notes: [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/raw/master/masters/datatech/2.pdf), [Data Quality dimensions](https://github.com/avivace/compsci/raw/master/masters/datatech/dataquality.pdf).
+
 
 #### Informatics for industrial applications (Digital systems)
 
@@ -52,15 +54,19 @@ a partire da ontologie](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors: 
 
 #### Probabilistic Models for decision making
 
-- [kalman2d](https://github.com/avivace/kalman) - Final course project. Interactive 2D simulation of the Kalman Filter in use to reduce input noise.
+- [kalman2d](https://github.com/avivace/kalman) - Final course project. Interactive 2D simulation of the *Kalman Filter* (LQE) in use to reduce (statistical) input noise.
 
 #### Methods of Scientific Computing
 
-- [MSC1-SparseMatrix](https://github.com/avivace/mcs1-sparsematrix)
-- [MSC2-DCT](https://github.com/avivace/mcs2-dct)
+Final course projects:
+
+- [MSC1-SparseMatrix](https://github.com/avivace/mcs1-sparsematrix) - Comparing open source and propetary solvers for sparse matrices.
+- [MSC2-DCT](https://github.com/avivace/mcs2-dct) - Comparing naïve and scipy implementations of *Discrete Cosine Transform* 2 (and its inverse) and exposing the scipy implementation on a web appplication allowing to apply it on user provided images (BMP format).
 
 
 ## Bachelor's
+
+2014-2017
 
 #### Internship/Thesis
 
