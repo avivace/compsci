@@ -59,7 +59,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Probabilistic Models for decision making
 
-- [kalman2d](https://github.com/avivace/kalman) - Final course project. Interactive 2D simulation of the *Kalman Filter* (LQE) in use to reduce (statistical) input noise.
+- [kalman2d](https://avivace.github.io/kalman/) - Final course project. Interactive 2D simulation of the *Kalman Filter* (LQE) in use to reduce (statistical) input noise.
 
 #### Methods of Scientific Computing
 
