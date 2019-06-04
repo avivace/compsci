@@ -1,15 +1,16 @@
 # compsci
 
-Documentation, resources, projects and lecture notes on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in *Computer Science*.
+> Documentation, resources, projects and lecture notes on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in *Computer Science*.
 
-You're welcome to report errors, improvements or feedbacks as Issues, or directly Pull Request.
+You're welcome to report errors, improvements or feedbacks as Issues, or directly propose modifications with a Pull Request.
 
-PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or clone from the GitHub website).
+PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or directly clone from the GitHub website).
 
-### Contents
+### Table of contents
 
-- [Resources](#resources)
+- [General resources](#general-resources)
 - [Master's](#masters)
+    + Concurrent Models
     + Data Technology and Machine Learning
     + Informatics for industrial applications (Digital systems)
     + Probabilistic Models for decision making
@@ -25,7 +26,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
     + Embedded Systems
 - [Building](#building)
 
-## Resources
+## General resources
 
 More courses notes:
 
@@ -41,6 +42,10 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 ## Master's
 
 2018-2019
+
+#### Concurrent Models
+
+- [Paolo Mancarella (Università degli studi di Pisa) - *Note di semantica assiomatica*](http://pages.di.unipi.it/corradini/Didattica/LPP-13/Logica%20di%20Hoare.pdf)
 
 #### Data Technology and Machine Learning
 
