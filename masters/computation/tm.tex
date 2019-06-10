@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\tikzstyle{line}=[draw] % here
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance = 5cm, auto]
+    \node [startstop] (ba) {Block A};
+    \node [startstop, right of=ba] (bb) {Block B};
+    \path [line] (ba) -- (bb);
+\end{tikzpicture}
+\end{document}
