@@ -27,10 +27,14 @@ I problemi NP-Completi sono riducibili l'uno all'altro in tempo polinomiale, e t
 
 ## SAT $\leq_p$ 3SAT.
 
-Mapperemo una formula CNF f in una formula g 3CNF tale che g è soddisfacibile se e solo se f lo è. Mostreremo prima il caso in cui f sia una 4CNF. Sia C una clausola di di f. C = u1 OR NOT u2 OR NOT u3 OR u4. Aggiungiamo una nuova variabile z ad f e sostituiamo C con la coppia di clausole C1 = u1 OR u NOT u2 or Z AND C2 = NOT u3 OR u4 or NOT Z. 
+Mapperemo una formula CNF f in una formula g 3CNF tale che g è soddisfacibile se e solo se f lo è. Mostreremo prima il caso in cui f sia una 4CNF. Sia C una clausola di di f. $C = u_1 \vee \neg u_2 \vee \neg u_3 \vee u_4$ Aggiungiamo una nuova variabile $z$ ad $f$ e sostituiamo $C$ con congiunzione delle seguenti due clausole
 
-Se C è vera, allora c'è un assegnamento per z che soddisfa sia C1 che C2.
-Se C è false, qualsiasi assegnamento di z rende o C1 o C2 falsa.
+- $C_1 \equiv u_1 \vee \neg u_2 \vee z$
+- $C_2 \equiv \neg u_3 \vee u_4 \vee \neg z$ 
+- e quindi $C := C_1 \wedge C_2$
+
+Se C è vera, allora c'è un assegnamento per z che soddisfa sia $C_1$ che $C_2$ .
+Se C è falsa, qualsiasi assegnamento di z rende o $C_1$  o $C_2$  falsa.
 
 Questa idea può essere applicata ad una clausola generica di dimensione 4 ed in generale di dimensione k (per k > 3) in un equivalente coppia di clausole C1 di dimensione k-1 e C2 di dimensione 3 che dipendono dalle k variabili di C ed una variabile aggiuntiva z.
 
@@ -105,7 +109,7 @@ Vero. Tutti i problemi in NP sono riducibili in tempo polinomiale ad un problema
 
 #### Ci sono problemi in NP che non si riducono in tempo polinomiale a nessun problema in NP
 
-Vero (?). Tutti i problemi in NP si riducono ad un problema NP-Completo. Non è detta la stessa cosa di due problemi in NP.
+Falso (?). Tutti i problemi in NP si riducono ad un problema NP-Completo. Non è detta la stessa cosa di due problemi in NP.
 
 #### Un problema NP-Hard deve essere anche NP-completo
 
@@ -182,6 +186,11 @@ Falso. Se si risolvesse un problema NP-Hard in tempo polinomiale, allora P=NP.
 
 Falso. Un cammino Hamiltoniano di minimo costo però potrebbe avere costo maggiore di un minimo albero di copertura (è costretto a scegliere archi per non tornare mai su un vertice già coperto, cosa che invece può fare un albero di copertura). Ogni cammino può essere trasformato in albero, ma non viceversa. Quindi, un cammino di copertura minimo (Hamiltonian Path) potrebbe essere più costoso dell'albero.
 
+#### Dare un esempio di problema indecidibile
+
+todo
+
+
 # Approssimazione
 
 ### 4) Sia A un algoritmo 5/2-approssimante per Vertex-Cover (VC). Sia dato il grafo G = (V,E) dove E = {(1,2),(1,3),(1,4),(4,5),(3,4)}. Dire qual è la massima dimensione di una soluzione restituita da A sul grafo G.
@@ -200,7 +209,7 @@ Sia $\varepsilon$ la stringa vuota, $\sigma$ simbolo singolo dell'alfabeto $\ups
 - $B(\sigma) = \varepsilon$
 - $B(X\sigma) = B(B(X)\sigma)$ se $X[|B(X)|+1] \neq \sigma$
 
-#### Definizione di prefix-function
+#### Definizione di prefix-function $\upvarphi$
 
 Dato un pattern $P$ di lunghezza $m$, la funzione
 
@@ -212,6 +221,34 @@ $\upvarphi: \{0,1..m\} \rightarrow \{-1,0,1..m-1\}$
 - $\forall j \geq 1 \wedge j \leq m, \upvarphi(j) = |B(P[1,j])|$ 
     
     (lunghezza del bordo di P fino a j).
+
+#### Calcolo di $\upvarphi$ per induzione
+
+Complessità: O(m)
+
+- $\upvarphi(0) = -1$
+- $\upvarphi(1) = 0$
+- Per ogni $j>1$, fino a $j=m$:
+    
+    $k=\upvarphi(j-1)$
+
+    A) Se $P[k+1] = P[j]$ allora $\upvarphi(j) = k + 1$
+    B) altrimenti, $k=\upvarphi(k)$ e torna ad A
+
+todo: esempio
+
+## Algoritmi
+
+### PME con Automi a stati finiti
+
+Input del problema: testo T di lunghezza n, pattern P di lunghezza m.
+
+#### Fase 1, Preprocessing
+
+Definiamo la funzione di transione $\delta:\{0..m\}\times\Sigma\rightarrow\{0..m\}$:
+
+- $\delta(j,\sigma) = j + 1 \leftrightarrow P[j+1] = \sigma \wedge j < m$
+- altrimenti, $\delta(j,\sigma) = k$, con $k = |B(P[i,j] \sigma)|$
 
 
 #### Definire la parola $D_j^k$  per la ricerca approssimata di una stringa S in un testo T tramite algoritmo di Wu-Manber. Fare un esempio esplicativo
@@ -238,6 +275,31 @@ $D^1_8$ = `1110`
 
 ### 7) Data la BWT B = `gg$ccaacac` di un testo T definito su di un alfabeto {a, c, g, t}, specificare senza ricostruire T (e motivando la risposta) quanti sono i suffissi che iniziano con il simbolo `c` e in che posizione stanno nell'ordinamento lessicografico di tutti i suffissi di T. Determinare inoltre l'FM Index e ricostruire il testo T.
 
+1) Riordiniamo B
+
+B = `gg$ccaacac`
+
+F = `$aaaccccgg`
+
+Ci sono 4 suffissi che iniziano con il simbolo c, in posizione 5, 6, 7 ed 8.
+
+Motivazione: la BWT B di un testo T è la permutazione dei simboli di T tale che B[i] è il simbolo che precede l'i-esimo suffisso in ordine lessicografico.
+
+2) Determiniamo l'FM Index
+L'FM Index è composto da due funzioni: $C$ ed $Occ$:
+
+$C(\sigma): \Sigma \rightarrow N$
+
+$C(\sigma)$ = numero di simboli di B lessicograficamente minori di $\sigma$
+
+$Occ: \Sigma \times \{1, 2,3 ... |B|+1\} \rightarrow N$
+
+$Occ(\sigma, i)$ = numero di simboli uguali a $\sigma$ in $B[1,i-1]$
+
+
 ### 8) Descrivere l'algoritmo di ricerca esatta di un pattern P in una stringa S basato sulla BWT (Burrows-Wheeler Transform) di S.
+
+- Spazio di B: $O(nlog|\Sigma|)$
+- B può essere calcolata da S in tempo O(n)
 
 Antonio Vivace - [source](https://github.com/avivace/compsci)
