@@ -1,7 +1,29 @@
 # Teoria della Computazione
+
 Soluzioni delle prove scritte.
 
-# Riduzioni
+# Complessità
+
+## Definizioni
+
+#### Cammino Hamiltoniano
+
+Cammino che tocca tutti i vertici del grafo una ed una sola volta.
+
+Si ha un *ciclo* hamiltoniano quando esiste un arco che collega l'ultimo vertice del cammino con il primo, realizzando così un ciclo che visita tutti i vertifici per poi ritornare al punto di partenza.
+
+#### Cammino Euleriano
+
+Cammino che tocca tutti gli archi di un grafo una ed una sola volta.
+
+Ciclo euleriano? todo
+
+#### Osservazione NP-equivalenza
+
+I problemi NP-Completi sono riducibili l'uno all'altro in tempo polinomiale, e tutti i problemi in NP sono riducibili in tempo polinomiale a problemi NP-Completi. Dunque, dato un qualsiasi problema NP-Hard, tutti i problemi in NP sono riconducibili ad esso.
+
+
+## Riduzioni
 
 ## SAT $\leq_p$ 3SAT.
 
@@ -21,6 +43,8 @@ Ricordiamo che
 - 3SAT = { x : x formula in 3-CNF soddisfacibile}
 - IND = {$(G,k)$ : esiste un insieme indipendente del grafo $G=(V,E)$ di dimensione $k$}
 
+todo
+
 ## Vertex Cover $\leq_p$ Set Cover
 
 todo
@@ -33,11 +57,7 @@ todo
 
 todo
 
-# Complessità
-
-Si dica quale delle seguenti affermazione è vera.
-
-`14feb17`
+### Si dica quale delle seguenti affermazione è vera.
 
 #### Un problema NP-Hard può non essere NP-completo
 
@@ -51,8 +71,6 @@ Vero.
 
 Falso.
 
-`17lug17`
-
 #### Esistono problemi NP-Hard che non sono NP-Completi
 
 Vero.
@@ -64,8 +82,6 @@ Vero.
 #### Un problema nella classe di complessità P è risolubile in tempo polinomiale da una MdT non deterministica
 
 Vero.
-
-`22giu17`
 
 #### Non esistono macchine di Turing che non terminano
 
@@ -79,8 +95,6 @@ Falso. Tutti i problemi P sono anche in NP, in quanto le MdT non deterministiche
 
 Falso. Esistono problemi che sono NP ed NP-Hard (i cosidetti problemi NP-Completi).
 
-`28feb17`
-
 #### Un problema NP-Hard è un problema che sta in NP
 
 Falso. Non necessariamente. Esistono problemi NP-Hard che stanno anche in NP e si chiamano NP-Completi. Alcuni problemi NP-Hard non stanno in NP.
@@ -91,59 +105,116 @@ Vero. Tutti i problemi in NP sono riducibili in tempo polinomiale ad un problema
 
 #### Ci sono problemi in NP che non si riducono in tempo polinomiale a nessun problema in NP
 
-    
-
-(29giu18)
+Vero (?). Tutti i problemi in NP si riducono ad un problema NP-Completo. Non è detta la stessa cosa di due problemi in NP.
 
 #### Un problema NP-Hard deve essere anche NP-completo
 
+Falso.
+
 #### Un problema in NP può non essere NP-completo
+
+Vero.
+
 
 #### Ci sono problemi in NP che non si riducono in tempo polinomiale a un problema in P
 
-(22feb2018)
+Vero (?), altrimenti non sarebbero problemi in NP.
 
 #### Esistono problemi in P che non sono in NP
 
+Falso.
+
 #### Un problema in NP non può essere NP-Completo
+
+Falso.
 
 #### Un problema NP-difficile deve essere calcolabile da una macchina di Turing non deterministica in tempo polinomiale
 
-(16lug18)
+Falso.
 
 #### Esistono problemi NP-Hard che non sono NP-completi
 
+Vero. Un problema è NP hard se tutti i problemi in NP si riducono polinomialmente ad esso. Non è necessario che esso stesso sia in NP. Se lo è, tuttavia, si chiama NP-Completo.
+
 #### Esistono problemi in NP che non sono NP-Hard
+
+Vero.
 
 #### Un problema nella classe di complessità P è risolubile in tempo polinomiale da una MdT non deterministica
 
-(12set18)
+Vero.
 
 #### Si dia la definizione di problema NP-Completo
 
-(21feb19)
+Un problema è NP-Completo se e solo se:
+
+1) È in NP, ovvero può essere risolto in tempo polinomiale da una macchina non deterministica o -equivalentemente- verificato in tempo polinomiale da una macchina deterministica.
+
+2) È NP-Difficile, ovvero tutti i problemi in NP possono essere ridotti in tempo polinomiale (da una macchina di turing deterministica) ad esso.
+
+Quindi, la classe NP-Completo contiene tutti i problemi di **decisione** in NP per cui qualsiasi problema in NP può essere ridotto ad essi in tempo polinomiale da una macchina di Turing deterministica.
 
 #### Un problema NP-Completo si riduce in tempo polinomiale ad un problema NP-Hard
 
+Vero. La classe dei problemi NP-Completi è NP-Equivalente, quindi ogni NP-C è riducibile ad un altro NP-C. Dato che NP-Completo $\rightarrow$ NP-Hard, l'affermazione è corretta.
+
 #### Un problema NP-Hard può non essere in NP
+
+Vero.
 
 #### Ci sono problemi in NP che non si riducono in tempo polinomiale ad un problema in NP
 
-(29gen19)
+Vero (?). L'unica garanzia è che ognuno di essi si deve poter ridurre in tempo polinomiale ad un problema NP-Hard.
 
 #### Un problema NP-Hard sta in NP
 
+Falso. Non necessariamente.
+
 #### Un problema NP-Hard si riduce in tempo polinomiale ad un altro problema NP-Hard
+
+Falso (?). 
 
 #### Se un problema in NP si risolve polinomialmente, allora P = NP
 
+Falso. Se si risolvesse un problema NP-Hard in tempo polinomiale, allora P=NP.
+
 #### Il minimo albero di copertura di un grafo completo pesato ha un costo maggiore del cammino Hamiltoniano di minimo costo
+
+Falso. Un cammino Hamiltoniano di minimo costo però potrebbe avere costo maggiore di un minimo albero di copertura (è costretto a scegliere archi per non tornare mai su un vertice già coperto, cosa che invece può fare un albero di copertura). Ogni cammino può essere trasformato in albero, ma non viceversa. Quindi, un cammino di copertura minimo (Hamiltonian Path) potrebbe essere più costoso dell'albero.
+
+# Approssimazione
 
 ### 4) Sia A un algoritmo 5/2-approssimante per Vertex-Cover (VC). Sia dato il grafo G = (V,E) dove E = {(1,2),(1,3),(1,4),(4,5),(3,4)}. Dire qual è la massima dimensione di una soluzione restituita da A sul grafo G.
 
-L'ottimo è di dimensione 2 (ad esempio i vertici 1, 4). La più grande soluzione che può dare A è 5/2 * 2 = 5.
+L'ottimo è di dimensione 2, ad esempio {1, 4}. La più grande (peggiore) soluzione che può dare A è 5/2 * 2 = 5.
 
-### 6) Definire la parola $D_j^k$  per la ricerca approssimata di una stringa S in un testo T tramite algoritmo di Wu-Manber. Fare un esempio esplicativo
+# Pattern Matching
+
+## Definizioni
+
+#### Definizione ricorsiva di Bordo
+
+Sia $\varepsilon$ la stringa vuota, $\sigma$ simbolo singolo dell'alfabeto $\upsigma$.
+
+- $B(\varepsilon) = \varepsilon$
+- $B(\sigma) = \varepsilon$
+- $B(X\sigma) = B(B(X)\sigma)$ se $X[|B(X)|+1] \neq \sigma$
+
+#### Definizione di prefix-function
+
+Dato un pattern $P$ di lunghezza $m$, la funzione
+
+$\upvarphi: \{0,1..m\} \rightarrow \{-1,0,1..m-1\}$
+
+È definita come segue:
+
+- $\upvarphi(0) = -1$
+- $\forall j \geq 1 \wedge j \leq m, \upvarphi(j) = |B(P[1,j])|$ 
+    
+    (lunghezza del bordo di P fino a j).
+
+
+#### Definire la parola $D_j^k$  per la ricerca approssimata di una stringa S in un testo T tramite algoritmo di Wu-Manber. Fare un esempio esplicativo
 
 Dato 
 
