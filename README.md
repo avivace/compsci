@@ -16,7 +16,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
     + Probabilistic Models for decision making
     + Methods of Scientific Computing
 - [Bachelor's](#bachelors)
-    + Stage/Thesis
+    + Internship/Thesis
     + Operations Research
     + Information Security
     + Databases
@@ -120,4 +120,10 @@ Final course projects:
 
 ### Building
 
-Markdown files are compiled to PDF using _pandoc_.`pandoc $file_base_name.md -o $file_base_name.pdf template.tex`. The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
+Markdown files are compiled to PDF using _pandoc_.
+
+```bash
+pandoc $file_base_name.md -o $file_base_name.pdf template.tex
+```
+
+The LaTeX template used is hosted [here](https://github.com/avivace/dotfiles).
