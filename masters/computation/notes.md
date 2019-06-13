@@ -2,7 +2,6 @@
 
 Antonio Vivace - [Sorgenti](https://github.com/avivace/compsci)
 
-
 # Complessità
 
 ## Definizioni
@@ -94,6 +93,12 @@ Mostriamo ora che esiste un ciclo hamiltoniano se e solo se esiste un tour TSP
 ## Vertex Cover $\leq_p$ IND
 
 todo
+
+## Complessità parametrica
+
+Tempo = $f(k)n^c$
+
+Vertex Cover con bounded search tree $O = (2^k |V|)$
 
 ### Si dica quale delle seguenti affermazione è vera.
 
@@ -344,7 +349,36 @@ end
 
 ### PM Esatto con Baeza-Yates e Gonnet (BYG, paradigma SHIFT-AND)
 
-todo
+Complessità $O(|\Sigma|+m)$
+
+#### Fase 1, Preprocessing
+
+$B_\sigma = B_\sigma[i] = 1 \leftrightarrow P[i] = \sigma$, altrimenti 0
+
+Dato il pattern P di lunghezza m, la tabella B è l'insieme delle parole $B_\sigma$, per ognuno dei $\sigma \in \Sigma$
+
+Calcolo di B:
+
+- Inizializzazione: tutta B a 0, M a `1000..`
+- Per ognuno dei caratteri in P: 
+    
+    $B_\sigma = M$ OR $B\sigma$
+
+    SHIFT RIGHT di M
+
+#### Fase 2, Scansione del testo
+
+Definizione di parola $D_j$. Dato un indice j compreso tra 0 e n=|T|, D è una parola di m=|P| bit tale che:
+
+$d_i = D_j[i] \leftrightarrow P[1,i] = suff(T[1,j])$
+
+Se $d_m \leftrightarrow$ P ha un'occorrenza in T che finisce in j.
+
+- Inizializzazione di una maschera M = `00..1` di m bit tutti uguali a 0 tranne l'ultimo che è 1
+- Inizia dalla parola $D_0 = 00.00$
+- per j tra 1 ed ed n calcola $D_j$ come segue:
+    + $D_j$ = 1RSHIFT$(D_{j-1)})$ AND $B_{T[j]}$
+- ogni volta che $D_j$ and $M$ è diverso da 0..0 viene c'è un matching di P in T a j-m+1
 
 ### PM Approssimato con Wu-Manber (paradigma SHIFT-AND)
 
@@ -397,6 +431,7 @@ $Occ: \Sigma \times \{1, 2,3 ... |B|+1\} \rightarrow N$
 
 $Occ(\sigma, i)$ = numero di simboli uguali a $\sigma$ in $B[1,i-1]$
 
+j = C(sigma) + Occ(sigma,j) + 1
 
 ### 8) Descrivere l'algoritmo di ricerca esatta di un pattern P in una stringa S basato sulla BWT (Burrows-Wheeler Transform) di S.
 
