@@ -10,6 +10,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + Theory of Computation
     + Concurrent Models
     + Data Technology and Machine Learning
     + Informatics for industrial applications (Digital systems)
@@ -42,6 +43,10 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 ## Master's
 
 2018-2019
+
+#### Theory of Computation
+
+- [Notes](https://github.com/avivace/compsci/blob/master/masters/computation/notes.pdf)
 
 #### Concurrent Models
 
