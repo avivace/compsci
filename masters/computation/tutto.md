@@ -1,6 +1,7 @@
 # Teoria della Computazione
 
-Soluzioni delle prove scritte.
+Antonio Vivace - [Sorgenti](https://github.com/avivace/compsci)
+
 
 # Complessità
 
@@ -16,7 +17,13 @@ Si ha un *ciclo* hamiltoniano quando esiste un arco che collega l'ultimo vertice
 
 Cammino che tocca tutti gli archi di un grafo una ed una sola volta.
 
-Ciclo euleriano? todo
+*Ciclo* euleriano: Cammino euleriano che inizia e finisce sullo stesso vertice.
+
+*Teorema di Eulero*: un grafo connesso ha un ciclo di eulero se e solo se tutti i vertici hanno grado pari.
+
+Il problema del ciclo euleriano è facile per il teorema di eulero.
+
+Grado di un vertice: numero di archi uscenti + entranti.
 
 #### Osservazione NP-equivalenza
 
@@ -24,6 +31,7 @@ I problemi NP-Completi sono riducibili l'uno all'altro in tempo polinomiale, e t
 
 
 ## Riduzioni
+
 
 ## SAT $\leq_p$ 3SAT.
 
@@ -44,18 +52,44 @@ Applicare questa trasformazione comporta una trasformazione in tempo polinomiale
 
 Ricordiamo che 
 
-- 3SAT = { x : x formula in 3-CNF soddisfacibile}
+- 3SAT = { $\phi$ : $\phi$ formula in 3-CNF soddisfacibile}
 - IND = {$(G,k)$ : esiste un insieme indipendente del grafo $G=(V,E)$ di dimensione $k$}
 
-todo
+Ci serve una funzione tale che presa in input una formula 3CNF (3SAT) la trasformi in una coppia (G,k) dove G è un grafo con un indipendent set di dimensione k se solo se $\phi$ è soddisfacibile.
+
+G contiene 3 vertici per clausola, uno per letterale della clausola (ogni sottografo è un *gadget*). Ogni gadget è connesso. Ora, colleghiamo ogni letterale con il suo negato in un altro gadget, se presente.
+
+Fissiamo il parametro k uguale al numero di clausole di $\phi$.
+
+Questa trasformazione opera in tempo polinomiale, come si vede facilmente (al più quadratico rispetto al numero di vertici).
+
+Mostriamo ora che la corrispondenza tra $\phi$ e (G,k) appena costruito è una riduzione corretta.
+
+1) $IND \rightarrow 3SAT$. Sia S un insieme indipendente di dimensione k. Poichè in un triangolo tutti i vertici sono fra loro connessi, S non conterrà più di un vertice per ogni triangolo. Considerando i letterali in S come veri, si ottiene un assegnamento di verità consistente (se è incluso un letterale non lo è il suo opposto, dato che sono collegati da archi le assegnazioni opposte) e tutte le clausole sono soddisfatte (un vertice per triangolo, ovvero una clausola).
+
+2) $IND \leftarrow 3SAT$ Dato un assegnamento che rende vera $\phi$, per ogni gadget prentiamo un letterale che risulta vero nell'assegnamento. Tale insieme costituisce un Indipendent Set per considerazione analoghe a quelle già viste ed ha dimensione $k$ per costruzione.
 
 ## Vertex Cover $\leq_p$ Set Cover
 
-todo
+Ci serve costruire una funzione polinomiale che mappi ogni istanza di Vertex Cover (G = (V,E), k) in un'istanza di Set Cover C' tale che (G,k) e (U, S, C', j) = f(G,k) diano le stesse risposte nei rispettivi problemi, per tutti i grafi e dimensioni.
+
+Costruiamo un insieme per ogni vertice che contiene gli archi incidenti a quel vertice. Poniamo l'U da coprire uguale all'insieme degli archi (U = E), numeriamo i vertici da 1 a n e includiamo in $S_i$ gli archi incidenti al vertice i. Il parametro j di Set Cover è il k di Vertex Cover.
+
+1) $Vertex Cover \rightarrow Set Cover$. Se G ha una copertura di al di più j vertici, per costruzione, a questa copertura corrisponde un sottoinsieme C' di sottoinsiemi di U. Poichè C è una copertura per G e U e l'insieme degli archi di G, ogni elemento di U deve essere incluso in almeno un sottoinsimeme di C' poichè per definizione di copertura ogni arco ha alcumeno uno dei due vertici in C.
+
+2) $Vertex Cover \leftarrow Set Cover$. Se C' è un set cover di dimensione al più j, ad ognun insieme è associato un vertice. Sia C l'insieme dei vertici corrispondenti agli insiemi in C'. C ha la stessa cardinalità di C'. Preso un qualsiasi arco in U, sicuramente C' contiene almeno un insieme che include l'arco e. Tale insieme corrisponde a un nodo che è estremo di e (contenendo i suoi incidenti), quindi C deve contenere almeno un estremo di e.
 
 ## HAM $\leq_p$ TSP
 
-todo
+Ricordiamo che l'input di TSP è un grafo pesato G(V, E, w) con w la funzione di peso. Esiste un cammino da u a u che visita ogni nodo di V in G esattamente una volta con costo $\leq k$?
+
+Considerato G l'input per HAM, costruisco G' per TSP con gli stessi vertici di G e assegno peso 1 agli archi in G e peso 2 a tutti gli altri (grafo completo per TSP!)
+
+Mostriamo ora che esiste un ciclo hamiltoniano se e solo se esiste un tour TSP
+
+1) $HAM \leftarrow TSP$ con k numero di vertici di G', per costruizione se esiste un cammino di lunghezza $\leq$ k in TSP esso deve essere costituito soltanto da archi di peso 1. Tali archi sono anche in G quindi esiste il ciclo hamiltoniano.
+
+2) $HAM \rightarrow TSP$ se esiste un ciclo hamiltoniano in G è sicuramente costituito da |V| archi (definzione). Percorrendo gli stessi archi in G' ottengo un cammino per TSP lungo |V| archi di peso 1 (costruzione). Essendo il limite di costo per la decisione del problema TSP, essa è affermativa.
 
 ## Vertex Cover $\leq_p$ IND
 
@@ -188,10 +222,21 @@ Falso. Un cammino Hamiltoniano di minimo costo però potrebbe avere costo maggio
 
 #### Dare un esempio di problema indecidibile
 
-todo
+Un classico problema indicidibile è il *Problema di corrispondenza Post*. Date due sequenze di parole $A = <v_1, v_2, .. v_n>$ e $B = <w_1, w_2, .. w_m>$, ci chiediamo se esiste una sequenza di $n \geq 1$ (compresi tra i 1 e $m$) indici tale che 
 
+$v_{i1} . v_{i2} . ... v_in = w_{i1} . w_{i2} . ... w_{in}$
+
+In altre parole, è possibile comporre con due dizionari diversi una stessa frase?
 
 # Approssimazione
+
+### Algoritmo Double Tree 2-approssimante per TSP metrico
+
+todo
+
+### Algoritmo di Christofides 3/2-approssimante per TSP metrico
+
+todo
 
 ### 4) Sia A un algoritmo 5/2-approssimante per Vertex-Cover (VC). Sia dato il grafo G = (V,E) dove E = {(1,2),(1,3),(1,4),(4,5),(3,4)}. Dire qual è la massima dimensione di una soluzione restituita da A sul grafo G.
 
@@ -209,7 +254,30 @@ Sia $\varepsilon$ la stringa vuota, $\sigma$ simbolo singolo dell'alfabeto $\ups
 - $B(\sigma) = \varepsilon$
 - $B(X\sigma) = B(B(X)\sigma)$ se $X[|B(X)|+1] \neq \sigma$
 
-#### Definizione di prefix-function $\upvarphi$
+## Algoritmi
+
+### PME con Automi a stati finiti
+
+Input del problema: testo T di lunghezza n, pattern P di lunghezza m.
+
+#### Fase 1, Preprocessing
+
+Definiamo la funzione di transione $\delta:\{0..m\}\times\Sigma\rightarrow\{0..m\}$:
+
+- $\delta(j,\sigma) = j + 1 \leftrightarrow P[j+1] = \sigma \wedge j < m$
+- altrimenti, $\delta(j,\sigma) = k$, con $k = |B(P[i,j] \sigma)|$
+
+Complessità: $\mathcal{O}(m|\Sigma|)$
+
+#### Fase 2, Scansione del testo
+
+Definita $\delta$, partiamo dallo stato 0 e percorriamo l'automa consumando un simbolo di T alla volta. Ogni volta che si arriva allo stato = $m = |P|$ significa che c'è un occorrenza di P in T in posizione *numero transizione* - m + 1.
+
+Complessità: $\mathcal{O}(n)$
+
+### PM Esatto con Knuth-Morris-Pratt (KMP)
+
+#### Fase 1, Calcolo della funzione di fallimento $\upvarphi$
 
 Dato un pattern $P$ di lunghezza $m$, la funzione
 
@@ -224,7 +292,7 @@ $\upvarphi: \{0,1..m\} \rightarrow \{-1,0,1..m-1\}$
 
 #### Calcolo di $\upvarphi$ per induzione
 
-Complessità: O(m)
+Complessità: $\mathcal{O}(m)$
 
 - $\upvarphi(0) = -1$
 - $\upvarphi(1) = 0$
@@ -237,18 +305,50 @@ Complessità: O(m)
 
 todo: esempio
 
-## Algoritmi
+```java
+prefix (P)
+begin
+F(0) = -1
+F(1) = 0
 
-### PME con Automi a stati finiti
+for j = 2 to m do:
+    k = F(j-1)
+    while k >= 0 and P[k+1] != P[j]
+        k = F(k)
+    F(j) = k + 1
+end
+```
 
-Input del problema: testo T di lunghezza n, pattern P di lunghezza m.
+#### Fase 2, Scansione del testo 
 
-#### Fase 1, Preprocessing
+Complessità: $\mathcal{O}(n)$
 
-Definiamo la funzione di transione $\delta:\{0..m\}\times\Sigma\rightarrow\{0..m\}$:
+Viene confrontato, simbolo per simbolo, P con una finestra W di T (inizialmente W si posiziona su i=1 di T), da sinistra verso destra. Se vengono confrontati tutti i simboli con successo, esiste un'occorrenza di P in T, alla posizione i.
 
-- $\delta(j,\sigma) = j + 1 \leftrightarrow P[j+1] = \sigma \wedge j < m$
-- altrimenti, $\delta(j,\sigma) = k$, con $k = |B(P[i,j] \sigma)|$
+Al primo mismatch, W viene spostata verso destra alla posizione p = i + j + $\upvarphi(j-1) -1$. I primi k = $\upvarphi(j-1)$ simboli di P non vengono più confrontati e si parte da i+j-1.
+
+```java
+KMP (P,T,F)
+begin
+    m = |P|
+    n = |T|
+    j = 0
+    for q = 1 to n do
+        while j >= 0 and P[j+1] != T[q] then
+            j = F(j)
+        j = j + 1
+        if j = m then
+            return q-m+1
+end
+```
+
+### PM Esatto con Baeza-Yates e Gonnet (BYG, paradigma SHIFT-AND)
+
+todo
+
+### PM Approssimato con Wu-Manber (paradigma SHIFT-AND)
+
+todo
 
 
 #### Definire la parola $D_j^k$  per la ricerca approssimata di una stringa S in un testo T tramite algoritmo di Wu-Manber. Fare un esempio esplicativo
@@ -286,6 +386,7 @@ Ci sono 4 suffissi che iniziano con il simbolo c, in posizione 5, 6, 7 ed 8.
 Motivazione: la BWT B di un testo T è la permutazione dei simboli di T tale che B[i] è il simbolo che precede l'i-esimo suffisso in ordine lessicografico.
 
 2) Determiniamo l'FM Index
+
 L'FM Index è composto da due funzioni: $C$ ed $Occ$:
 
 $C(\sigma): \Sigma \rightarrow N$
@@ -299,7 +400,5 @@ $Occ(\sigma, i)$ = numero di simboli uguali a $\sigma$ in $B[1,i-1]$
 
 ### 8) Descrivere l'algoritmo di ricerca esatta di un pattern P in una stringa S basato sulla BWT (Burrows-Wheeler Transform) di S.
 
-- Spazio di B: $O(nlog|\Sigma|)$
-- B può essere calcolata da S in tempo O(n)
-
-Antonio Vivace - [source](https://github.com/avivace/compsci)
+- Spazio di B: $\mathcal{O}(n\log|\Sigma|)$
+- B può essere calcolata da S in tempo $\mathcal{O}(n)$
