@@ -10,6 +10,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + Design Lab
     + Theory of Computation
     + Concurrent Models
     + Data Technology and Machine Learning
@@ -43,6 +44,11 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 ## Master's
 
 2018-2019
+
+#### Design Lab
+
+- [Smart Home Automation](https://github.com/avivace/sha) - Final course project. A Rasberry Pi integrated domotic solution with MQTT supporting sensors, actuators and thermostat. Controllable from a fancy VueJS web application, smart speakers or a basic SMS interface. Documentation (Software Requirements Specification, Software Architecture, Testing, Deploy and Implementation) and a software implementation in Connexion (OpenAPI 3) and VueJS.
+
 
 #### Theory of Computation
 
