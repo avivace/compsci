@@ -57,6 +57,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 #### Concurrent Models
 
 - [Paolo Mancarella (Università degli studi di Pisa) - *Note di semantica assiomatica*](http://pages.di.unipi.it/corradini/Didattica/LPP-13/Logica%20di%20Hoare.pdf)
+- [Luca Aceto - Reactive Systems: Modelling, Specification and Verification](http://www.cs.ioc.ee/yik/schools/win2007/ingolfsdottir/sv-book-part1.pdf)
 
 #### Data Technology and Machine Learning
 
