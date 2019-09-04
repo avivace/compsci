@@ -10,6 +10,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + Cloud Computing
     + Design Lab
     + Theory of Computation
     + Concurrent Models
@@ -44,6 +45,14 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 ## Master's
 
 2018-2019
+
+#### Complex Systems
+
+- [Physarum](https://github.com/avivace/Physarum) - Final course project. Physarum polycephalum slime mould computing simulations
+
+#### Cloud Computing
+
+- [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
 
 #### Design Lab
 
