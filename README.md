@@ -10,6 +10,7 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + Complex Systems
     + Cloud Computing
     + Design Lab
     + Theory of Computation
@@ -65,6 +66,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Concurrent Models
 
+- [Hoare triples / axiomatic semantics solved Exercises](masters/concurrent-models)
 - [Paolo Mancarella (Università degli studi di Pisa) - *Note di semantica assiomatica*](http://pages.di.unipi.it/corradini/Didattica/LPP-13/Logica%20di%20Hoare.pdf)
 - [Luca Aceto - Reactive Systems: Modelling, Specification and Verification](http://www.cs.ioc.ee/yik/schools/win2007/ingolfsdottir/sv-book-part1.pdf)
 
