@@ -67,7 +67,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Informatics for industrial applications (Digital systems)
 
-- [VHDLtrafficlights](https://github.com/avivace/) - Final course project. Implement a semaphore with a Xilinx FPGA.
+- [VHDLtrafficlights](https://github.com/avivace/VHDLtrafficlights) - Final course project. Implement a semaphore with a Xilinx FPGA.
 
 #### Probabilistic Models for decision making
 
