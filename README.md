@@ -10,6 +10,8 @@ PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or c
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + Complex Systems
+    + Cloud Computing
     + Design Lab
     + Theory of Computation
     + Concurrent Models
@@ -45,6 +47,14 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 2018-2019
 
+#### Complex Systems
+
+- [Physarum](https://github.com/avivace/Physarum) - Final course project. Physarum polycephalum slime mould computing simulations
+
+#### Cloud Computing
+
+- [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
+
 #### Design Lab
 
 - [Smart Home Automation](https://github.com/avivace/sha) - Final course project. A Rasberry Pi integrated domotic solution with MQTT supporting sensors, actuators and thermostat. Controllable from a fancy VueJS web application, smart speakers or a basic SMS interface. Documentation (Software Requirements Specification, Software Architecture, Testing, Deploy and Implementation) and a software implementation in Connexion (OpenAPI 3) and VueJS.
@@ -56,6 +66,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Concurrent Models
 
+- [Hoare triples / axiomatic semantics solved Exercises](masters/concurrent-models)
 - [Paolo Mancarella (Università degli studi di Pisa) - *Note di semantica assiomatica*](http://pages.di.unipi.it/corradini/Didattica/LPP-13/Logica%20di%20Hoare.pdf)
 - [Luca Aceto - Reactive Systems: Modelling, Specification and Verification](http://www.cs.ioc.ee/yik/schools/win2007/ingolfsdottir/sv-book-part1.pdf)
 
