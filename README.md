@@ -36,7 +36,7 @@ More courses notes:
 
 - [C. Baldi](https://github.com/crisbal/Appunti-Unimib) (Bachelor's)
 
-Some theses I appreciated / used as examples for the graduating students I advised:
+Some theses I appreciated and used as examples for the graduating students I advised:
 
 - [M. Rota - *Rilevamento di elementi testuali in immagini digitali*](https://github.com/dubvulture/thesis/blob/master/thesis.pdf) - Fully convutional networks. Advisors: R. Schettini, M.Buzzelli.
 - [L. Soligo - *Generazione di reti Bayesiane
@@ -69,6 +69,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 - [Hoare triples / axiomatic semantics solved Exercises](masters/concurrent-models)
 - [Paolo Mancarella (Università degli studi di Pisa) - *Note di semantica assiomatica*](http://pages.di.unipi.it/corradini/Didattica/LPP-13/Logica%20di%20Hoare.pdf)
 - [Luca Aceto - Reactive Systems: Modelling, Specification and Verification](http://www.cs.ioc.ee/yik/schools/win2007/ingolfsdottir/sv-book-part1.pdf)
+- [Linear Temporal Logic examples](http://www.dis.uniroma1.it/liberato/ar/ltl/ltl.html)
 
 #### Data Technology and Machine Learning
 
