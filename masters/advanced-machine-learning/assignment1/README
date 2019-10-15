@@ -1,0 +1,8 @@
+# Assignment 1: Background and feed forward networks
+
+
+The assignment consists in the prediction of default payments using a neural network. 
+
+The dataset contains information on default payments, demographic factors, credit data, history of payment, and bill statements of credit card clients in Taiwan from April 2005 to September 2005. 
+
+The provided data comprises the training set that can be used for the training (and eventually for the validation) and the unlabelled test set.
