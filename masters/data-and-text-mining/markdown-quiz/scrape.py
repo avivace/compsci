@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 import json
+import sys
 
-with open("data1_1.html") as fp:
+with open(sys.argv[1]) as fp:
 	soup = BeautifulSoup(fp)
 
 data = []
@@ -32,5 +33,7 @@ for question in questions:
 		data.append(obj)
 
 
-print(data)
-print(json.dumps(data, indent=4, sort_keys=True))
+jsondata = json.dumps(data, indent=4, sort_keys=True)
+
+with open(sys.argv[1][:-5]+'.json', 'w') as outfile:
+    json.dump(jsondata, outfile)
