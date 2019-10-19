@@ -101,7 +101,7 @@ Twisted==19.2.0
 typing==3.6.6
 ufw==0.36
 unidiff==0.5.5
-urllib3==1.24.1
+urllib3==1.24.2
 vboxapi==1.0
 wcwidth==0.1.7
 webencodings==0.5.1
