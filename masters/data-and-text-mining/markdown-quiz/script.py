@@ -9,7 +9,6 @@ data = []
 questions = soup.find_all(class_="que")
 for question in questions:
 	obj = {}
-	print("---")
 	if (question.find_all(class_="grade")[0].text == "Mark 1.00 out of 1.00"):
 		print("Full grade question found")
 		obj["text"] = question.find_all(class_="qtext")[0].text.strip().replace("\t", "").replace("\n"," ")
@@ -17,20 +16,7 @@ for question in questions:
 		obj["answers"] = []
 		answerObj = {}
 
-		for answer in question.find_all(class_="r0"):
-			answerObj = {}
-			answerObj["text"] = answer.text
-			if "checked" in answer.input.attrs:
-				print(answer.input["checked"])
-				answerObj["correct"] = True
-			else:
-				answerObj["correct"] = False
-
-			print("ANSWER:", answer.text)
-			
-			obj["answers"].append(answerObj)
-
-		for answer in question.find_all(class_="r1"):
+		for answer in question.find_all(class_=["r0", "r1"]):
 			answerObj = {}
 			answerObj["text"] = answer.text
 			if "checked" in answer.input.attrs:
