@@ -97,7 +97,7 @@ sip==4.19.19
 six==1.12.0
 swagger-ui-bundle==0.0.3
 Telethon==1.9.0
-Twisted==19.2.0
+Twisted==19.7.0
 typing==3.6.6
 ufw==0.36
 unidiff==0.5.5
