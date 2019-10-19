@@ -105,7 +105,7 @@ urllib3==1.24.1
 vboxapi==1.0
 wcwidth==0.1.7
 webencodings==0.5.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 yapf==0.26.0
 youtube-dl==2019.6.21
 zeroconf==0.21.3
