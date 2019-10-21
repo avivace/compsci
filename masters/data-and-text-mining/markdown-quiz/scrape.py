@@ -7,7 +7,7 @@ with open(sys.argv[1]) as fp:
 	soup = BeautifulSoup(fp, features="html.parser")
 
 data = []
-title = soup.title.text
+title = soup.title.text[6:]
 questions = soup.find_all(class_="que")
 for question in questions:
 	obj = {}
@@ -22,7 +22,7 @@ for question in questions:
 		for answer in question.find_all(class_=["r0", "r1"]):
 			
 			answerObj = {}
-			answerObj["question"] = answer.text
+			answerObj["text"] = answer.text
 			if "checked" in answer.input.attrs:
 				answerObj["correct"] = True
 				corrects+=1
