@@ -4,7 +4,7 @@ import sys
 import hashlib
 
 with open(sys.argv[1]) as fp:
-	soup = BeautifulSoup(fp)
+	soup = BeautifulSoup(fp, features="html.parser")
 
 data = []
 title = soup.title.text
@@ -13,25 +13,25 @@ for question in questions:
 	obj = {}
 	obj["chapter"]= title
 	if (question.find_all(class_="grade")[0].text == "Mark 1.00 out of 1.00"):
-		print("Full grade question found")
 		obj["question"] = question.find_all(class_="qtext")[0].text.strip().replace("\t", "").replace("\n"," ")
 		questionSlug = hashlib.sha224(obj["question"].encode('utf-8')).hexdigest()
-		print("QUESTION TEXT:", obj["question"])
+		print("Found full grade question", questionSlug[-8:])
 		obj["answers"] = []
 		answerObj = {}
-
+		corrects=0
 		for answer in question.find_all(class_=["r0", "r1"]):
+			
 			answerObj = {}
 			answerObj["question"] = answer.text
 			if "checked" in answer.input.attrs:
-				print(answer.input["checked"])
 				answerObj["correct"] = True
+				corrects+=1
 			else:
 				answerObj["correct"] = False
-
-			print("ANSWER:", answer.text)
 			
 			obj["answers"].append(answerObj)
+		print(" with", len(obj["answers"]), "options,", corrects, "correct")
 
+		obj["meta"] = "1"
 		with open(str(questionSlug)[-8:]+'.json', 'w') as outfile:
 			json.dump(obj, outfile)
