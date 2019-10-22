@@ -3,7 +3,7 @@ import json
 import sys
 import hashlib
 
-with open(sys.argv[1]) as fp:
+with open(sys.argv[1], encoding='utf8') as fp:
 	soup = BeautifulSoup(fp, features="html.parser")
 
 data = []
