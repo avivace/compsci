@@ -1,12 +1,17 @@
 # Data and Text Mining
 
+Correct answers are in bold.
+
+\jb{set count = namespace(a=0)}
+
 \jb{for chapter in data.list}
 
-## \jv{chapter}
+
+## \jv{loop.index}.\jv{chapter}
 
 \jb{for questionData in data[chapter]}
-
-\jv{loop.index}. \jv{questionData.question} (`\jv{questionData.meta.hash}`)
+\jb{set count.a = count.a + 1}
+\jv{count.a}. \jv{questionData.question} (`\jv{questionData.meta.hash}`)
 
 \jb{for ans in questionData.answers}
 
