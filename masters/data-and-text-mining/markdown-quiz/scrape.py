@@ -17,7 +17,7 @@ print(len(files), "quiz reviews to scrape")
 for f in files:
 	print("Processing", f)
 
-	with open(f) as fp:
+	with open(f, encoding='utf8') as fp:
 		soup = BeautifulSoup(fp, features="html.parser")
 
 
