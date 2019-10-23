@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import json
 import sys
 import hashlib
+import os
 
 with open(sys.argv[1]) as fp:
 	soup = BeautifulSoup(fp, features="html.parser")
@@ -9,6 +10,13 @@ with open(sys.argv[1]) as fp:
 data = []
 title = soup.title.text[6:]
 questions = soup.find_all(class_="que")
+
+try:
+	os.mkdir("dumps")
+	print("Directory dumps Created ") 
+except FileExistsError:
+	pass
+
 for question in questions:
 	obj = {}
 	obj["chapter"]= title
@@ -33,5 +41,11 @@ for question in questions:
 		print(" with", len(obj["answers"]), "options,", corrects, "correct")
 
 		obj["meta"] = "1"
-		with open(str(questionSlug)[-8:]+'.json', 'w') as outfile:
+		
+		try:
+			os.mkdir("dumps/"+title)
+			print("Directory " , title ,  " Created ") 
+		except FileExistsError:
+			pass
+		with open("dumps/"+title+"/"+str(questionSlug)[-8:]+'.json', 'w') as outfile:
 			json.dump(obj, outfile)
