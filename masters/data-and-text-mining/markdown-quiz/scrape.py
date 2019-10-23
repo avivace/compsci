@@ -7,6 +7,7 @@ import os
 with open(sys.argv[1]) as fp:
 	soup = BeautifulSoup(fp, features="html.parser")
 
+
 data = []
 title = soup.title.text[6:]
 questions = soup.find_all(class_="que")
@@ -40,7 +41,9 @@ for question in questions:
 			obj["answers"].append(answerObj)
 		print(" with", len(obj["answers"]), "options,", corrects, "correct")
 
-		obj["meta"] = "1"
+		obj["meta"] = {}
+		obj["meta"]["schemaver"] = "2"
+		obj["meta"]["hash"] = str(questionSlug)[-8:]
 		
 		try:
 			os.mkdir("dumps/"+title)

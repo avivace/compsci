@@ -1,0 +1,28 @@
+# Data and Text Mining
+
+\jb{for chapter in data.list}
+
+## \jv{chapter}
+
+\jb{for questionData in data[chapter]}
+
+\jv{loop.index}. \jv{questionData.question} (`\jv{questionData.meta.hash}`)
+
+\jb{for ans in questionData.answers}
+
+\jb{if ans.correct}
+- **\jv{ans.text}**
+\jb{else}
+- \jv{ans.text}
+\jb{endif}
+
+
+
+\jb{endfor}
+
+---
+
+
+\jb{endfor}
+
+\jb{endfor}

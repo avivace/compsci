@@ -1,5 +1,7 @@
 import os
 import json
+import jinja2
+from jinja2 import Template
 
 path = './dumps'
 
@@ -13,14 +15,34 @@ for r, d, f in os.walk(path):
 mergedObj = {}
 
 for f in files:
-    print(f)
+    print("Processing", f)
     with open(f) as json_file:
     	data = json.load(json_file)
     	try:
     		mergedObj[data["chapter"]].append(data)
     	except KeyError:
+    		print("Adding chapter", data["chapter"])
     		mergedObj[data["chapter"]] = []
     		mergedObj[data["chapter"]].append(data)
 
+mergedObj["list"] = list(mergedObj)
 
-print(list(mergedObj))
+latex_jinja_env = jinja2.Environment(
+	block_start_string = '\jb{',
+	block_end_string = '}',
+	variable_start_string = '\jv{',
+	variable_end_string = '}',
+	comment_start_string = '\#{',
+	comment_end_string = '}',
+	line_statement_prefix = 'j%%',
+	line_comment_prefix = '%#',
+	trim_blocks = True,
+	autoescape = False,
+	loader = jinja2.FileSystemLoader(os.path.abspath('.'))
+)
+
+template = latex_jinja_env.get_template('template.j2')
+
+with open('template.md', 'w') as file:
+	file.write(template.render(data=mergedObj))
+	print("MD successfully compiled")
