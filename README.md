@@ -4,8 +4,6 @@
 
 You're welcome to report errors, improvements or feedbacks as Issues, or directly propose modifications with a Pull Request.
 
-PDF are hosted with `git-lfs`. Be sure to have it installed before cloning (or click [here](https://github.com/avivace/compsci/archive/master.zip) for the full zip).
-
 ### Table of contents
 
 - [General resources](#general-resources)
