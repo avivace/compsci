@@ -7,25 +7,25 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 ### Table of contents
 
 - [General resources](#general-resources)
-- [Master's](#masters)
-    + Complex Systems
-    + Cloud Computing
-    + Design Lab
-    + Theory of Computation
-    + Concurrent Models
-    + Data Technology and Machine Learning
-    + Informatics for industrial applications (Digital systems)
-    + Probabilistic Models for decision making
-    + Methods of Scientific Computing
-- [Bachelor's](#bachelors)
-    + Internship/Thesis
-    + Operations Research
-    + Information Security
-    + Databases
-    + Bioinformatics
-    + Operative Systems
-    + Programming Paradigms
-    + Embedded Systems
+- [Master's](#master-s)
+    + [Complex Systems](#complex-systems)
+    + [Cloud Computing](#cloud-computing)
+    + [Design Lab](#design-lab)
+    + [Theory of Computation](#theory-of-computation)
+    + [Concurrent Models](#concurrent-models)
+    + [Data Technology and Machine Learning](#data-technology-and-machine-learning)
+    + [Informatics for industrial applications (Digital systems)](#informatics-for-industrial-applications--digital-systems-)
+    + [Probabilistic Models for decision making](#probabilistic-models-for-decision-making)
+    + [Methods of Scientific Computing](#methods-of-scientific-computing)
+- [Bachelor's](#bachelor-s)
+    + [Internship/Thesis](#internship-thesis)
+    + [Operations Research](#operations-research)
+    + [Information Security](#information-security)
+    + [Databases](#databases)
+    + [Bioinformatics](#bioinformatics)
+    + [Operative Systems](#operative-systems)
+    + [Programming Paradigms](#programming-paradigms)
+    + [Embedded Systems](#embedded-systems)
 - [Building](#building)
 
 ## General resources
