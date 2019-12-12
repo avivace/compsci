@@ -7,7 +7,7 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 ### Table of contents
 
 - [General resources](#general-resources)
-- [Master's](#master-s)
+- [Master's](#masters)
     + [Complex Systems](#complex-systems)
     + [Cloud Computing](#cloud-computing)
     + [Design Lab](#design-lab)
@@ -17,7 +17,7 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
     + [Informatics for industrial applications (Digital systems)](#informatics-for-industrial-applications--digital-systems-)
     + [Probabilistic Models for decision making](#probabilistic-models-for-decision-making)
     + [Methods of Scientific Computing](#methods-of-scientific-computing)
-- [Bachelor's](#bachelor-s)
+- [Bachelor's](#bachelors)
     + [Internship/Thesis](#internship-thesis)
     + [Operations Research](#operations-research)
     + [Information Security](#information-security)
