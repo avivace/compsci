@@ -8,6 +8,7 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 
 - [General resources](#general-resources)
 - [Master's](#masters)
+    + [Data Analytics](#data-analytics)
     + [Complex Systems](#complex-systems)
     + [Cloud Computing](#cloud-computing)
     + [Design Lab](#design-lab)
@@ -43,7 +44,11 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 ## Master's
 
-2018-2019
+2018-2020
+
+#### Data Analytics
+
+- [Amazon Reviews Sentiment Analysis](https://github.com/avivace/reviews-sentiment)
 
 #### Complex Systems
 
