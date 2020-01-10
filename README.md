@@ -48,7 +48,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Data Analytics
 
-- [Amazon Reviews Sentiment Analysis](https://github.com/avivace/reviews-sentiment)
+- [Amazon Reviews Analytics](https://github.com/avivace/reviews-sentiment) - Data exploration, Analytics, Sentiment Analysis, Topic Analysis (LDA) and a web demo exposing the ML trained models.
 
 #### Complex Systems
 
