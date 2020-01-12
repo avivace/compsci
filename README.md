@@ -48,9 +48,20 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Data Analytics
 
+##### Course Project
+
 - [Amazon Reviews Analytics](https://github.com/avivace/reviews-sentiment) - Final course project. Data exploration, Analytics, Sentiment Analysis, Topic Analysis (LDA) and a web demo exposing the ML trained models.
-- (Paper) Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
-- (Slides) Community Detection approaches: [Web Structure Mining: Community Detection and Evaluation](https://www.irit.fr/~Yoann.Pitarch/Docs/M2Stats/WebMining/wsm_communities.pdf)
+
+##### Theory
+
+- Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
+- Community Detection approaches: [Web Structure Mining: Community Detection and Evaluation](https://www.irit.fr/~Yoann.Pitarch/Docs/M2Stats/WebMining/wsm_communities.pdf)
+- Spectral Clustering:
+    + [On Spectral Clustering: ANalysis and an algorithm - Ng, Jordan, WWeiss](http://ai.stanford.edu/~ang/papers/nips01-spectral.pdf)
+    + [Spectral clustering - The intuition and math behind how it works!](https://towardsdatascience.com/spectral-clustering-82d3cff3d3b7)
+    + [Spectral Clustering: A quick overview](https://calculatedcontent.com/2012/10/09/spectral-clustering/)
+    + (Video) [Spectral Clustering](https://www.youtube.com/watch?v=zkgm0i77jQ8)
+    + (Video) [Spectral Clustering Algorithm](https://www.youtube.com/watch?v=P-LEH-AFovE)
 
 #### Complex Systems
 
