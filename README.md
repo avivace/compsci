@@ -49,7 +49,8 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 #### Data Analytics
 
 - [Amazon Reviews Analytics](https://github.com/avivace/reviews-sentiment) - Final course project. Data exploration, Analytics, Sentiment Analysis, Topic Analysis (LDA) and a web demo exposing the ML trained models.
-- Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
+- (Paper) Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
+- (Slides) Community Detection approaches: [Web Structure Mining: Community Detection and Evaluation](https://www.irit.fr/~Yoann.Pitarch/Docs/M2Stats/WebMining/wsm_communities.pdf)
 
 #### Complex Systems
 
