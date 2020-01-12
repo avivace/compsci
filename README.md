@@ -54,6 +54,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 ##### Theory
 
+- [Notes, definitions and solved questions](masters/data-analytics/noted.pdf)
 - Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
 - Community Detection approaches: [Web Structure Mining: Community Detection and Evaluation](https://www.irit.fr/~Yoann.Pitarch/Docs/M2Stats/WebMining/wsm_communities.pdf)
 - Spectral Clustering:
