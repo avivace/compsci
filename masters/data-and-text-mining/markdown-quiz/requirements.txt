@@ -57,7 +57,7 @@ memory-profiler==0.55.0
 numpy==1.17.2
 openapi-spec-validator==0.2.7
 Paste==3.0.8
-Pillow==5.4.1
+Pillow==6.2.0
 protobuf==3.7.1
 psutil==5.5.0
 pyaes==1.6.1
