@@ -23,7 +23,7 @@ cycler==0.10.0
 dbus-python==1.2.12
 devscripts==2.19.7
 distro==1.3.0
-ecdsa==0.13.2
+ecdsa==0.13.3
 entrypoints==0.3
 enum34==1.1.6
 Flask==1.0.2
@@ -57,7 +57,7 @@ memory-profiler==0.55.0
 numpy==1.17.2
 openapi-spec-validator==0.2.7
 Paste==3.0.8
-Pillow==5.4.1
+Pillow==6.2.0
 protobuf==3.7.1
 psutil==5.5.0
 pyaes==1.6.1
@@ -84,7 +84,7 @@ python-debian==0.1.36
 python-debianbts==2.8.2
 python-jose==3.0.1
 python-magic==0.4.16
-pyxdg==0.25
+pyxdg==0.26
 PyYAML==5.1
 ratelimit==2.2.1
 reportbug==7.5.3
@@ -97,15 +97,15 @@ sip==4.19.19
 six==1.12.0
 swagger-ui-bundle==0.0.3
 Telethon==1.9.0
-Twisted==19.2.0
+Twisted==19.7.0
 typing==3.6.6
 ufw==0.36
 unidiff==0.5.5
-urllib3==1.24.1
+urllib3==1.24.2
 vboxapi==1.0
 wcwidth==0.1.7
 webencodings==0.5.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 yapf==0.26.0
 youtube-dl==2019.6.21
 zeroconf==0.21.3
