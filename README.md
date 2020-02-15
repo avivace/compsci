@@ -54,7 +54,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 ##### Theory
 
-- [Notes, definitions and solved questions](masters/data-analytics/noted.pdf)
+- [Notes, definitions and solved questions](masters/data-analytics/notes.md)
 - Unbalaced data: [Survey of resampling techniques for improving classification performance in unbalanced datasets](https://arxiv.org/abs/1608.06048)
 - Community Detection approaches: [Web Structure Mining: Community Detection and Evaluation](https://www.irit.fr/~Yoann.Pitarch/Docs/M2Stats/WebMining/wsm_communities.pdf)
 - Spectral Clustering:
@@ -120,20 +120,20 @@ Final course projects:
 
 #### Operations Research
 
-- [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/operative-research/risposte.pdf)
+- [Soluzioni domande esami scritti](https://github.com/avivace/compsci/blob/master/bachelors/operative-research/risposte.pdf)
 
 #### Information Security
 
-- [Applicazioni](https://github.com/avivace/compsci/blob/master/sicurezza/1applicazioni.pdf)
-- [Crittografia](https://github.com/avivace/compsci/blob/master/sicurezza/2crittografia.pdf)
-- [Sistemi Operativi](https://github.com/avivace/compsci/blob/master/sicurezza/3sistemi_operativi.pdf)
-- [Reti](https://github.com/avivace/compsci/blob/master/sicurezza/4reti.pdf)
+- [Applicazioni](https://github.com/avivace/compsci/blob/master/bachelors/sicurezza/1applicazioni.pdf)
+- [Crittografia](https://github.com/avivace/compsci/blob/master/bachelors/sicurezza/2crittografia.pdf)
+- [Sistemi Operativi](https://github.com/avivace/compsci/blob/master/bachelors/sicurezza/3sistemi_operativi.pdf)
+- [Reti](https://github.com/avivace/compsci/blob/master/bachelors/sicurezza/4reti.pdf)
 
 #### Databases
-- [Relational algebra exercises](https://github.com/avivace/compsci/blob/master/databases/relational_algebra.md)
-- [Logic programming](https://github.com/avivace/compsci/raw/master/databases/teoria_progLogica.pdf)
-- [Relational algebra](https://github.com/avivace/compsci/blob/master/databases/teoria_AlgebraRelazionale.pdf)
-- [SQL](https://github.com/avivace/compsci/blob/master/databases/teoria_SQL.pdf)
+- [Relational algebra exercises](https://github.com/avivace/compsci/blob/master/bachelors/databases/relational_algebra.md)
+- [Logic programming](https://github.com/avivace/compsci/raw/master/bachelors/databases/teoria_progLogica.pdf)
+- [Relational algebra](https://github.com/avivace/compsci/blob/master/bachelors/databases/teoria_AlgebraRelazionale.pdf)
+- [SQL](https://github.com/avivace/compsci/blob/master/bachelors/databases/teoria_SQL.pdf)
 
 #### Bioinformatics
 
