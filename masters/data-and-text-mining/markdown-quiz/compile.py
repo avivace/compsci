@@ -16,7 +16,7 @@ mergedObj = {}
 
 for f in files:
     print("Processing", f)
-    with open(f) as json_file:
+    with open(f, encoding='utf-8') as json_file:
     	data = json.load(json_file)
     	try:
     		mergedObj[data["chapter"]].append(data)
@@ -43,6 +43,6 @@ latex_jinja_env = jinja2.Environment(
 
 template = latex_jinja_env.get_template('template.j2')
 
-with open('template.md', 'w') as file:
+with open('template.md', 'w', encoding='utf-8') as file:
 	file.write(template.render(data=mergedObj))
 	print("MD successfully compiled")
