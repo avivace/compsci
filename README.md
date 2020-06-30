@@ -10,7 +10,6 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 - [Master's](#masters)
     + [Probabilistic Models for decision making](#probabilistic-models-for-decision-making)
     + [Data Analytics](#data-analytics)
-      - [Theory](#theory)
     + [Complex Systems](#complex-systems)
     + [Cloud Computing](#cloud-computing)
     + [Software Design Lab](#software-design-lab)
