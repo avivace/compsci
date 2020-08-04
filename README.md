@@ -12,6 +12,7 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
     + [Data Analytics](#data-analytics)
     + [Complex Systems](#complex-systems)
     + [Cloud Computing](#cloud-computing)
+    + [Data and Text Mining](#data-and-text-mining)
     + [Software Design Lab](#software-design-lab)
     + [Theory of Computation](#theory-of-computation)
     + [Concurrent Models](#concurrent-models)
@@ -75,6 +76,9 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 - [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
 
+#### Data and Text Mining
+
+- Course Project: [Cervical Cancer](https://github.com/avivace/cervical-cancer) -  Exploratory study on Cervical Cancer: verifying known causal relations and assessing risk factors from women medical history datasets. 
 #### Software Design Lab
 
 - Course project: [Smart Home Automation](https://github.com/avivace/sha) - A Rasberry Pi integrated domotic solution with MQTT supporting sensors, actuators and a thermostat. Controllable from a fancy web application, smart speakers or a basic SMS interface. Documentation (Software Requirements Specification, Software Architecture, Testing, Deploy and Implementation) and a software implementation in Connexion (OpenAPI 3) and VueJS.
