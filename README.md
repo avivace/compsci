@@ -98,6 +98,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 #### Data Technology and Machine Learning
 
 - Course project: [Basket Shots](https://github.com/avivace/basket-shots) - Predicting Basket Shots outcomes using Suppor Vector Machines ([documentation](https://github.com/avivace/basket-shots/raw/master/docs/index.pdf)).
+- Course project: [pokemon-fights](https://github.com/avivace/pokemon-fights) - Predicting Pokèmon fights outcomes with decision trees.
 - Notes: [Introduction to non-centralized DBMSs](https://github.com/avivace/compsci/blob/master/masters/data-technology/2.pdf), [Data Quality dimensions](https://github.com/avivace/compsci/blob/master/masters/data-technology/dataquality.pdf).
 
 
