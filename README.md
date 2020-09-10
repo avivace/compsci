@@ -70,15 +70,20 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Complex Systems
 
-- Course project: [Physarum](https://github.com/avivace/Physarum) - Final course project. Physarum polycephalum slime mould computing simulations
+- Course project: [Physarum](https://github.com/avivace/Physarum) - Final course project. Physarum polycephalum slime mould computing simulations.
 
 #### Cloud Computing
 
 - [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
 
+#### Advanced Machine Learning
+
+- Course Project: [airbnb-booking](https://github.com/avivace/airbnb-booking) - Predicting where Airbnb users will book their first travel destination.
+
 #### Data and Text Mining
 
 - Course Project: [Cervical Cancer](https://github.com/avivace/cervical-cancer) -  Exploratory study on Cervical Cancer: verifying known causal relations and assessing risk factors from women medical history datasets. 
+
 #### Software Design Lab
 
 - Course project: [Smart Home Automation](https://github.com/avivace/sha) - A Rasberry Pi integrated domotic solution with MQTT supporting sensors, actuators and a thermostat. Controllable from a fancy web application, smart speakers or a basic SMS interface. Documentation (Software Requirements Specification, Software Architecture, Testing, Deploy and Implementation) and a software implementation in Connexion (OpenAPI 3) and VueJS.
