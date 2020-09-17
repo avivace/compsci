@@ -32,6 +32,11 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 
 ## General resources
 
+Master thesis guidelines:
+
+- [Technische Universität Chemnitz](https://content.usi.ch/sites/default/files/storage/attachments/inf/inf-thesis-guidelines.pdf)
+- [Università della Svizzera Italiana](https://content.usi.ch/sites/default/files/storage/attachments/inf/inf-thesis-guidelines.pdf)
+
 More courses notes:
 
 - [C. Baldi](https://github.com/crisbal/Appunti-Unimib) (Bachelor's)
