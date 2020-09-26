@@ -34,7 +34,7 @@ You're welcome to report errors, improvements or feedbacks as Issues, or directl
 
 Master thesis guidelines:
 
-- [Technische Universität Chemnitz](https://content.usi.ch/sites/default/files/storage/attachments/inf/inf-thesis-guidelines.pdf)
+- [Technische Universität Chemnitz](https://www.tu-chemnitz.de/informatik/ce/files/Guidelines-Master-Thesis.pdf)
 - [Università della Svizzera Italiana](https://content.usi.ch/sites/default/files/storage/attachments/inf/inf-thesis-guidelines.pdf)
 
 More courses notes:
@@ -80,10 +80,6 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 #### Cloud Computing
 
 - [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
-
-#### Advanced Machine Learning
-
-- Course Project: [airbnb-booking](https://github.com/avivace/airbnb-booking) - Predicting where Airbnb users will book their first travel destination.
 
 #### Data and Text Mining
 
