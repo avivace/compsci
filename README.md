@@ -80,6 +80,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 #### Cloud Computing
 
 - [Cloud Computing and Distributed Systems](https://github.com/Cinofix/Afternotes) - Afternotes by Antonio E. Cinà from the course at University Ca' Foscari of Venice, master in Computer Science - Data Management and Analytics.
+- [Cambridge - Concurrent and Distributed Systems](https://www.cl.cam.ac.uk/teaching/2021/ConcDisSys/materials.html)
 
 #### Data and Text Mining
 
