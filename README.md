@@ -2,7 +2,7 @@
 
 > Lecture notes, projects and various resources on the courses I attended at *Università degli Studi di Milano Bicocca* for my Bachelor's and Master's degrees in *Computer Science*.
 
-You're welcome to report errors, improvements or feedbacks as Issues, or directly propose modifications with Pull Requests.
+You're welcome to contribute and send feeback opening Issues or proposing modifications with Pull Requests.
 
 ### Contents
 
@@ -54,7 +54,7 @@ a partire da ontologie*](https://gitlab.com/LolloneS/Tesi-Triennale) - Advisors:
 
 #### Thesis
 
-- [*Experimental Anomaly Detection on CERN CMS Trigger Rates*](https://github.com/avivace/master-thesis)
+- [*Modernising the CERN CMS Trigger Rates Monitoring software*](https://github.com/avivace/master-thesis)
 
 #### Probabilistic Models for decision making
 
